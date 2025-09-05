@@ -37,10 +37,7 @@ export const CallDesktopModal: React.FC<CallDesktopModalProps> = ({
           <div className="text-center p-4 bg-muted/50 rounded-lg">
             <QrCode className="w-12 h-12 mx-auto mb-2 text-muted-foreground" />
             <p className="text-sm text-muted-foreground mb-2">
-              Scan QR code or visit on mobile:
-            </p>
-            <p className="text-sm font-mono bg-background px-3 py-1 rounded border">
-              {window.location.href}
+              Scan QR code or visit on mobile
             </p>
           </div>
           
