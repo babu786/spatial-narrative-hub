@@ -2,6 +2,14 @@ import { NavbarWebDev } from "@/components/NavbarWebDev";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { 
   BookOpen, 
   Clock, 
@@ -17,8 +25,10 @@ import {
   Search,
   Zap
 } from "lucide-react";
+import { useState } from "react";
 
 export default function Learn() {
+  const [selectedCourse, setSelectedCourse] = useState<typeof courses[0] | null>(null);
   const courses = [
     {
       id: 1,
@@ -250,9 +260,80 @@ export default function Learn() {
                         <span className="font-bold text-primary">{course.price}</span>
                         <span className="text-xs text-muted-foreground line-through">{course.originalPrice}</span>
                       </div>
-                      <Button size="sm" variant="outline" className="text-xs">
-                        View Course
-                      </Button>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button size="sm" variant="outline" className="text-xs">
+                            View Course
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-2xl">
+                          <DialogHeader>
+                            <DialogTitle className="text-2xl flex items-center gap-2">
+                              <course.icon className="w-6 h-6 text-primary" />
+                              {course.title}
+                            </DialogTitle>
+                            <DialogDescription className="text-base">
+                              {course.description}
+                            </DialogDescription>
+                          </DialogHeader>
+                          
+                          <div className="space-y-6">
+                            {/* Course Stats */}
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                              <div className="glass-card p-3 rounded-lg text-center">
+                                <Clock className="w-5 h-5 text-primary mx-auto mb-1" />
+                                <div className="font-semibold text-sm">{course.duration}</div>
+                                <div className="text-xs text-muted-foreground">Duration</div>
+                              </div>
+                              <div className="glass-card p-3 rounded-lg text-center">
+                                <BookOpen className="w-5 h-5 text-primary mx-auto mb-1" />
+                                <div className="font-semibold text-sm">{course.lessons}</div>
+                                <div className="text-xs text-muted-foreground">Lessons</div>
+                              </div>
+                              <div className="glass-card p-3 rounded-lg text-center">
+                                <Users className="w-5 h-5 text-primary mx-auto mb-1" />
+                                <div className="font-semibold text-sm">{course.students.toLocaleString()}</div>
+                                <div className="text-xs text-muted-foreground">Students</div>
+                              </div>
+                              <div className="glass-card p-3 rounded-lg text-center">
+                                <Star className="w-5 h-5 text-yellow-400 mx-auto mb-1" />
+                                <div className="font-semibold text-sm">{course.rating}</div>
+                                <div className="text-xs text-muted-foreground">Rating</div>
+                              </div>
+                            </div>
+
+                            {/* Skills */}
+                            <div>
+                              <h4 className="font-semibold mb-3">What You'll Learn</h4>
+                              <div className="grid grid-cols-2 gap-2">
+                                {course.skills.map((skill, skillIndex) => (
+                                  <div key={skillIndex} className="flex items-center gap-2">
+                                    <CheckCircle className="w-4 h-4 text-primary" />
+                                    <span className="text-sm">{skill}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* Pricing */}
+                            <div className="glass-card p-4 rounded-lg">
+                              <div className="text-center">
+                                <div className="text-sm text-muted-foreground mb-2">Course Price</div>
+                                <div className="flex items-center justify-center gap-2 mb-2">
+                                  <span className="text-2xl font-bold text-primary">{course.price}</span>
+                                  <span className="text-muted-foreground line-through">{course.originalPrice}</span>
+                                </div>
+                                <div className="text-xs text-accent">
+                                  Save {Math.round((1 - parseInt(course.price.replace(/[₹,]/g, '')) / parseInt(course.originalPrice.replace(/[₹,]/g, ''))) * 100)}%
+                                </div>
+                                <Button variant="gradient" className="w-full mt-4">
+                                  Enroll Now
+                                </Button>
+                              </div>
+                            </div>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
                     </div>
                   </div>
                 </Card>
