@@ -193,7 +193,50 @@ export default function Contact() {
                   />
                 </div>
                 
-                <Button variant="gradient" size="lg" className="w-full text-lg py-4">
+                <Button 
+                  variant="gradient" 
+                  size="lg" 
+                  className="w-full text-lg py-4"
+                  onClick={() => {
+                    // Collect form data
+                    const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value || '';
+                    const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value || '';
+                    const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
+                    const phone = (document.getElementById('phone') as HTMLInputElement)?.value || '';
+                    const company = (document.getElementById('company') as HTMLInputElement)?.value || '';
+                    const service = (document.querySelector('select:nth-of-type(1)') as HTMLSelectElement)?.value || '';
+                    const budget = (document.querySelector('select:nth-of-type(2)') as HTMLSelectElement)?.value || '';
+                    const timeline = (document.querySelector('select:nth-of-type(3)') as HTMLSelectElement)?.value || '';
+                    const message = (document.getElementById('message') as HTMLTextAreaElement)?.value || '';
+                    
+                    // Create email content
+                    const subject = `New Project Inquiry from ${firstName} ${lastName}`;
+                    const body = `
+New Project Inquiry Details:
+
+Personal Information:
+- Name: ${firstName} ${lastName}
+- Email: ${email}
+- Phone: ${phone}
+- Company: ${company || 'N/A'}
+
+Project Requirements:
+- Service Needed: ${service || 'Not specified'}
+- Budget Range: ${budget || 'Not specified'}
+- Timeline: ${timeline || 'Not specified'}
+
+Project Details:
+${message || 'No additional details provided'}
+
+---
+This inquiry was submitted through the BUGnBULL contact form.
+                    `.trim();
+                    
+                    // Send email
+                    const mailtoUrl = `mailto:contact@bugnbull.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    window.location.href = mailtoUrl;
+                  }}
+                >
                   <Send className="w-5 h-5 mr-2" />
                   Send Message
                 </Button>
