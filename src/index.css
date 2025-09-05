@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 3D Website Development Agency Design System */
+/* Professional Web Development Agency Design System */
 
 @layer base {
   :root {
@@ -15,7 +15,7 @@
     --popover: 220 13% 18%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 262.1 83.3% 57.8%;
+    --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 215 27.9% 16.9%;
@@ -24,7 +24,7 @@
     --muted: 215 27.9% 16.9%;
     --muted-foreground: 217.9 10.6% 64.9%;
 
-    --accent: 262.1 83.3% 57.8%;
+    --accent: 142.1 76.2% 36.3%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,23 +32,23 @@
 
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
-    --ring: 262.1 83.3% 57.8%;
+    --ring: 221.2 83.2% 53.3%;
 
     --radius: 0.75rem;
 
-    /* 3D Theme Colors */
-    --gradient-primary: linear-gradient(135deg, hsl(262.1 83.3% 57.8%), hsl(221.2 83.2% 53.3%));
-    --gradient-secondary: linear-gradient(135deg, hsl(221.2 83.2% 53.3%), hsl(330.4 81.2% 60.4%));
-    --gradient-accent: linear-gradient(135deg, hsl(262.1 83.3% 57.8%), hsl(330.4 81.2% 60.4%));
-    --gradient-hero: linear-gradient(135deg, hsl(262.1 83.3% 57.8%) 0%, hsl(221.2 83.2% 53.3%) 50%, hsl(330.4 81.2% 60.4%) 100%);
+    /* Professional Theme Colors */
+    --gradient-primary: linear-gradient(135deg, hsl(221.2 83.2% 53.3%), hsl(142.1 76.2% 36.3%));
+    --gradient-secondary: linear-gradient(135deg, hsl(142.1 76.2% 36.3%), hsl(39.3 96.1% 60.0%));
+    --gradient-accent: linear-gradient(135deg, hsl(221.2 83.2% 53.3%), hsl(39.3 96.1% 60.0%));
+    --gradient-hero: linear-gradient(135deg, hsl(221.2 83.2% 53.3%) 0%, hsl(142.1 76.2% 36.3%) 50%, hsl(39.3 96.1% 60.0%) 100%);
     
     /* Glass Effects */
     --glass-bg: hsla(220, 13%, 18%, 0.7);
-    --glass-border: hsla(262.1, 83.3%, 57.8%, 0.2);
+    --glass-border: hsla(221.2, 83.2%, 53.3%, 0.2);
     
-    /* 3D Shadows */
-    --shadow-3d: 0 25px 50px -12px hsla(262.1, 83.3%, 57.8%, 0.25);
-    --shadow-glow: 0 0 40px hsla(262.1, 83.3%, 57.8%, 0.3);
+    /* Professional Shadows */
+    --shadow-3d: 0 25px 50px -12px hsla(221.2, 83.2%, 53.3%, 0.25);
+    --shadow-glow: 0 0 40px hsla(142.1, 76.2%, 36.3%, 0.3);
     --shadow-card: 0 10px 30px -5px hsla(220, 13%, 0%, 0.3);
 
     /* Animation Variables */

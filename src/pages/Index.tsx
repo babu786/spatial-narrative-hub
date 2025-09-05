@@ -1,24 +1,40 @@
-import { Hero3D } from "@/components/Hero3D";
-import { About3D } from "@/components/About3D";
-import { Skills3D } from "@/components/Skills3D";
-import { Contact3D } from "@/components/Contact3D";
-import { Navbar3D } from "@/components/Navbar3D";
+import { WebDevHero } from "@/components/WebDevHero";
+import { Services } from "@/components/Services";
+import { Portfolio } from "@/components/Portfolio"; 
+import { Pricing } from "@/components/Pricing";
+import { Team } from "@/components/Team";
+import { Testimonials } from "@/components/Testimonials";
+import { FAQ } from "@/components/FAQ";
+import { ContactWebDev } from "@/components/ContactWebDev";
+import { NavbarWebDev } from "@/components/NavbarWebDev";
 
 const Index = () => {
   return (
     <div className="min-h-screen overflow-hidden">
-      <Navbar3D />
+      <NavbarWebDev />
       <div id="home">
-        <Hero3D />
+        <WebDevHero />
       </div>
-      <div id="about">
-        <About3D />
+      <div id="services">
+        <Services />
       </div>
-      <div id="skills">
-        <Skills3D />
+      <div id="portfolio">
+        <Portfolio />
+      </div>
+      <div id="pricing">
+        <Pricing />
+      </div>
+      <div id="team">
+        <Team />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="faq">
+        <FAQ />
       </div>
       <div id="contact">
-        <Contact3D />
+        <ContactWebDev />
       </div>
     </div>
   );
