@@ -311,12 +311,12 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
+            <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
               <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
                 Get Free Quote
               </Button>
             </Link>
-            <Link to="/contact">
+            <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
               <Button variant="outline" size="lg" className="text-lg px-8 py-4">
                 Contact Us
               </Button>
