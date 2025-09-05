@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -7,7 +7,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Smartphone, QrCode } from "lucide-react";
+import { Smartphone } from "lucide-react";
+import QRCode from "qrcode";
 
 interface CallDesktopModalProps {
   open: boolean;
@@ -20,6 +21,30 @@ export const CallDesktopModal: React.FC<CallDesktopModalProps> = ({
   onOpenChange,
   phoneNumber = "+918764551955"
 }) => {
+  const [qrCodeUrl, setQrCodeUrl] = useState<string>("");
+
+  useEffect(() => {
+    const generateQR = async () => {
+      try {
+        const url = window.location.href;
+        const qrDataUrl = await QRCode.toDataURL(url, {
+          width: 200,
+          margin: 2,
+          color: {
+            dark: '#000000',
+            light: '#FFFFFF'
+          }
+        });
+        setQrCodeUrl(qrDataUrl);
+      } catch (err) {
+        console.error('Error generating QR code:', err);
+      }
+    };
+
+    if (open) {
+      generateQR();
+    }
+  }, [open]);
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
@@ -35,7 +60,17 @@ export const CallDesktopModal: React.FC<CallDesktopModalProps> = ({
         
         <div className="space-y-4">
           <div className="text-center p-4 bg-muted/50 rounded-lg">
-            <QrCode className="w-12 h-12 mx-auto mb-2 text-muted-foreground" />
+            {qrCodeUrl ? (
+              <img 
+                src={qrCodeUrl} 
+                alt="QR Code to open website on mobile" 
+                className="w-32 h-32 mx-auto mb-2 rounded-lg"
+              />
+            ) : (
+              <div className="w-32 h-32 mx-auto mb-2 bg-muted rounded-lg flex items-center justify-center">
+                <div className="text-muted-foreground">Loading QR...</div>
+              </div>
+            )}
             <p className="text-sm text-muted-foreground mb-2">
               Scan QR code or visit on mobile
             </p>
