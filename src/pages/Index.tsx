@@ -29,23 +29,29 @@ const Index = () => {
     {
       icon: Globe,
       title: "Website Development",
-      description: "Custom responsive websites built with modern technologies",
+      description: "Professional websites built with React, Next.js, and modern frameworks. Fully responsive, SEO-optimized, and blazing fast performance.",
+      features: ["Responsive Design", "SEO Optimization", "Fast Loading", "Mobile-First", "Modern Tech Stack"],
       price: "Starting from ₹15,000",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      deliveryTime: "7-14 days"
     },
     {
       icon: Smartphone,
       title: "Mobile App Development", 
-      description: "Native and cross-platform mobile applications",
+      description: "Native iOS & Android apps plus cross-platform solutions using React Native. From concept to App Store deployment.",
+      features: ["iOS & Android", "Cross-Platform", "App Store Ready", "Push Notifications", "Backend Integration"],
       price: "Starting from ₹35,000",
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
+      deliveryTime: "4-8 weeks"
     },
     {
       icon: ShoppingCart,
       title: "E-commerce Solutions",
-      description: "Complete online stores with payment integration",
+      description: "Complete online stores with secure payment gateways, inventory management, and analytics. Built for scalability and conversions.",
+      features: ["Payment Gateway", "Inventory System", "Order Management", "Analytics", "Multi-Currency"],
       price: "Starting from ₹25,000",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      deliveryTime: "2-4 weeks"
     }
   ];
 
@@ -125,11 +131,32 @@ const Index = () => {
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-4 text-sm">{service.description}</p>
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{service.description}</p>
+                  
+                  {/* Key Features */}
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-1 mb-3">
+                      {service.features.slice(0, 3).map((feature, featureIndex) => (
+                        <Badge key={featureIndex} variant="outline" className="text-xs px-2 py-1">
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Delivery Time */}
+                  <div className="flex items-center gap-2 mb-4 text-xs text-muted-foreground">
+                    <Clock className="w-3 h-3" />
+                    <span>Delivery: {service.deliveryTime}</span>
+                  </div>
+                  
                   <div className="flex items-center justify-between">
                     <span className="text-primary font-semibold">{service.price}</span>
                     <Link to="/services">
-                      <Button variant="ghost" size="sm">Learn More</Button>
+                      <Button variant="ghost" size="sm" className="group/btn">
+                        Learn More
+                        <ArrowRight className="w-3 h-3 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                      </Button>
                     </Link>
                   </div>
                 </Card>
