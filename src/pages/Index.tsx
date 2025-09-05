@@ -325,11 +325,11 @@ const Index = () => {
               </Button>
             </div>
             <div className="hidden md:block">
-              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4">
+                <a href="tel:+918764551955">
                   Contact Us
-                </Button>
-              </Link>
+                </a>
+              </Button>
             </div>
           </div>
         </div>
