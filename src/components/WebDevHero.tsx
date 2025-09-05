@@ -121,7 +121,7 @@ export const WebDevHero = () => {
             <p className="text-lg text-muted-foreground mb-4">
               Get 25% OFF on your first website project + Free SEO optimization
             </p>
-            <p className="text-sm text-accent font-semibold">Offer expires in 30 days</p>
+            <p className="text-sm text-accent font-semibold">Offer expires soon</p>
           </div>
         </div>
       </div>
