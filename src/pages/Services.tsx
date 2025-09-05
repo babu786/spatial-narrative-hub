@@ -219,7 +219,63 @@ export default function Services() {
                                 <p className="text-2xl font-bold text-primary">{service.price}</p>
                                 <p className="text-sm text-muted-foreground">Starting price</p>
                               </div>
-                              <Button className="px-6">Get Started</Button>
+                              <Dialog>
+                                <DialogTrigger asChild>
+                                  <Button className="px-6">Get Started</Button>
+                                </DialogTrigger>
+                                <DialogContent className="max-w-md">
+                                  <DialogHeader>
+                                    <DialogTitle className="text-2xl text-center">Get in Touch</DialogTitle>
+                                    <DialogDescription className="text-center">
+                                      Choose your preferred way to contact us about {service.title}
+                                    </DialogDescription>
+                                  </DialogHeader>
+                                  
+                                  <div className="space-y-4">
+                                    <Button 
+                                      variant="outline" 
+                                      size="lg" 
+                                      className="w-full text-lg py-4"
+                                      onClick={() => {
+                                        const message = `Hi! I'm interested in ${service.title}. Can you please provide more details and a quote?`;
+                                        const phoneNumber = "918764551955";
+                                        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                                        window.open(whatsappUrl, '_blank');
+                                      }}
+                                    >
+                                      <Smartphone className="w-5 h-5 mr-2" />
+                                      WhatsApp Contact
+                                    </Button>
+                                    
+                                    <Button 
+                                      variant="outline" 
+                                      size="lg" 
+                                      className="w-full text-lg py-4"
+                                      onClick={() => {
+                                        window.location.href = "tel:+918764551955";
+                                      }}
+                                    >
+                                      <Zap className="w-5 h-5 mr-2" />
+                                      Call Now
+                                    </Button>
+                                    
+                                    <Button 
+                                      variant="outline" 
+                                      size="lg" 
+                                      className="w-full text-lg py-4"
+                                      onClick={() => {
+                                        const subject = `Inquiry about ${service.title}`;
+                                        const body = `Hi,\n\nI'm interested in ${service.title}. Please provide more details about this service and a quote.\n\nThank you!`;
+                                        const mailtoUrl = `mailto:contact@bugnbull.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                                        window.location.href = mailtoUrl;
+                                      }}
+                                    >
+                                      <Search className="w-5 h-5 mr-2" />
+                                      Email Contact
+                                    </Button>
+                                  </div>
+                                </DialogContent>
+                              </Dialog>
                             </div>
                           </div>
                         </div>
@@ -260,9 +316,65 @@ export default function Services() {
             Let's discuss how we can help bring your vision to life
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
-              Get Free Quote
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
+                  Get Free Quote
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl text-center">Get in Touch for Free Quote</DialogTitle>
+                  <DialogDescription className="text-center">
+                    Choose your preferred way to contact us for a free project quote
+                  </DialogDescription>
+                </DialogHeader>
+                
+                <div className="space-y-4">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full text-lg py-4"
+                    onClick={() => {
+                      const message = "Hi! I'm interested in getting a free quote for my project. Can you please provide more details?";
+                      const phoneNumber = "918764551955";
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                      window.open(whatsappUrl, '_blank');
+                    }}
+                  >
+                    <Smartphone className="w-5 h-5 mr-2" />
+                    WhatsApp Contact
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full text-lg py-4"
+                    onClick={() => {
+                      window.location.href = "tel:+918764551955";
+                    }}
+                  >
+                    <Zap className="w-5 h-5 mr-2" />
+                    Call Now
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full text-lg py-4"
+                    onClick={() => {
+                      const subject = "Free Quote Request";
+                      const body = "Hi,\n\nI'm interested in getting a free quote for my project. Please provide more details about your services and pricing.\n\nThank you!";
+                      const mailtoUrl = `mailto:contact@bugnbull.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                      window.location.href = mailtoUrl;
+                    }}
+                  >
+                    <Search className="w-5 h-5 mr-2" />
+                    Email Contact
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4">
               Learn Web Design
             </Button>
