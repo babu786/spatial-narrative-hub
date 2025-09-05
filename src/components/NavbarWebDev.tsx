@@ -2,18 +2,20 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Code2, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Link, useLocation } from "react-router-dom";
 
 export const NavbarWebDev = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const location = useLocation();
 
   const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "Services", href: "#services" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Team", href: "#team" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Team", href: "/team" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const toggleTheme = () => {
@@ -25,25 +27,29 @@ export const NavbarWebDev = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center animate-pulse-glow">
               <Code2 className="w-6 h-6 text-primary-foreground" />
             </div>
             <span className="text-xl font-bold text-gradient">WebDev Pro</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
-                className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
+                to={item.href}
+                className={`relative text-foreground hover:text-primary transition-all duration-300 font-medium group ${
+                  location.pathname === item.href ? 'text-primary' : ''
+                }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.label}
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              </a>
+                <div className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-primary transition-transform duration-300 origin-left ${
+                  location.pathname === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
+              </Link>
             ))}
           </div>
 
@@ -84,15 +90,17 @@ export const NavbarWebDev = () => {
           <div className="md:hidden py-6 border-t border-primary/20 animate-fade-in">
             <div className="flex flex-col gap-6">
               {navItems.map((item, index) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-300 font-medium py-2 transform hover:translate-x-2"
+                  to={item.href}
+                  className={`text-foreground hover:text-primary transition-colors duration-300 font-medium py-2 transform hover:translate-x-2 ${
+                    location.pathname === item.href ? 'text-primary' : ''
+                  }`}
                   onClick={() => setIsOpen(false)}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               <div className="flex items-center justify-between mt-4">
                 <Button variant="gradient" size="sm" className="animate-pulse-glow">
