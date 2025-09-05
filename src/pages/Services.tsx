@@ -2,6 +2,14 @@ import { NavbarWebDev } from "@/components/NavbarWebDev";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { 
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { 
   Globe, 
   Smartphone, 
   ShoppingCart, 
@@ -12,7 +20,9 @@ import {
   Shield, 
   Headphones,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Clock,
+  Users
 } from "lucide-react";
 
 export default function Services() {
@@ -23,7 +33,11 @@ export default function Services() {
       description: "Custom responsive websites built with modern technologies",
       features: ["Responsive Design", "Fast Loading", "SEO Optimized", "Cross-browser Compatible"],
       price: "Starting from ₹15,000",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      timeline: "2-4 weeks",
+      team: "2-3 developers",
+      includes: ["Custom Design", "Content Management System", "Mobile Optimization", "Basic SEO Setup", "SSL Certificate", "1 Year Support"],
+      process: ["Requirements Analysis", "Design Mockups", "Development", "Testing", "Deployment", "Training & Handover"]
     },
     {
       icon: Smartphone,
@@ -31,7 +45,11 @@ export default function Services() {
       description: "Native and cross-platform mobile applications",
       features: ["iOS & Android", "React Native", "Flutter", "Progressive Web Apps"],
       price: "Starting from ₹35,000",
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
+      timeline: "6-12 weeks",
+      team: "3-4 developers",
+      includes: ["Cross-platform Development", "App Store Submission", "Push Notifications", "Offline Functionality", "API Integration", "6 Months Support"],
+      process: ["App Strategy", "UI/UX Design", "Development", "Quality Assurance", "App Store Deployment", "Post-launch Support"]
     },
     {
       icon: ShoppingCart,
@@ -39,7 +57,11 @@ export default function Services() {
       description: "Complete online stores with payment integration",
       features: ["Shopping Cart", "Payment Gateway", "Inventory Management", "Admin Panel"],
       price: "Starting from ₹25,000",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      timeline: "4-8 weeks",
+      team: "3-4 developers",
+      includes: ["Product Catalog", "Payment Integration", "Order Management", "Customer Dashboard", "Analytics", "Security Features"],
+      process: ["Business Analysis", "System Design", "Development", "Payment Setup", "Testing", "Launch & Training"]
     },
     {
       icon: Code2,
@@ -47,7 +69,11 @@ export default function Services() {
       description: "Tailored web applications for your business needs",
       features: ["Database Design", "API Development", "User Authentication", "Dashboard"],
       price: "Starting from ₹40,000",
-      color: "from-orange-500 to-red-500"
+      color: "from-orange-500 to-red-500",
+      timeline: "8-16 weeks",
+      team: "4-5 developers",
+      includes: ["Custom Features", "Database Design", "API Development", "User Management", "Admin Panel", "Scalable Architecture"],
+      process: ["Requirements Gathering", "System Architecture", "Database Design", "Development", "Integration Testing", "Deployment"]
     },
     {
       icon: Palette,
@@ -55,7 +81,11 @@ export default function Services() {
       description: "Beautiful and intuitive user interface designs",
       features: ["Wireframing", "Prototyping", "User Research", "Design Systems"],
       price: "Starting from ₹12,000",
-      color: "from-indigo-500 to-purple-500"
+      color: "from-indigo-500 to-purple-500",
+      timeline: "2-6 weeks",
+      team: "2 designers",
+      includes: ["User Research", "Wireframes", "High-fidelity Designs", "Prototypes", "Design System", "Handoff Documentation"],
+      process: ["Research & Discovery", "Wireframing", "Visual Design", "Prototyping", "User Testing", "Final Delivery"]
     },
     {
       icon: Search,
@@ -63,7 +93,11 @@ export default function Services() {
       description: "Boost your online visibility and reach more customers",
       features: ["On-page SEO", "Content Strategy", "Social Media", "Analytics"],
       price: "Starting from ₹8,000/month",
-      color: "from-teal-500 to-green-500"
+      color: "from-teal-500 to-green-500",
+      timeline: "Ongoing",
+      team: "2-3 marketers",
+      includes: ["SEO Audit", "Keyword Research", "Content Creation", "Social Media Management", "Analytics Setup", "Monthly Reports"],
+      process: ["SEO Audit", "Strategy Development", "Content Creation", "Implementation", "Monitoring", "Optimization"]
     }
   ];
 
@@ -115,10 +149,82 @@ export default function Services() {
                   
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-semibold text-primary">{service.price}</span>
-                    <Button variant="ghost" className="group/btn">
-                      Learn More
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-2 transition-transform" />
-                    </Button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="ghost" className="group/btn">
+                          Learn More
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-2 transition-transform" />
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="flex items-center gap-3 text-2xl">
+                            <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center`}>
+                              <Icon className="w-6 h-6 text-white" />
+                            </div>
+                            {service.title}
+                          </DialogTitle>
+                          <DialogDescription className="text-base">
+                            {service.description}
+                          </DialogDescription>
+                        </DialogHeader>
+                        
+                        <div className="space-y-6 mt-6">
+                          <div className="grid md:grid-cols-2 gap-6">
+                            <div>
+                              <h4 className="font-semibold mb-3 flex items-center gap-2">
+                                <Clock className="w-4 h-4" />
+                                Timeline
+                              </h4>
+                              <p className="text-muted-foreground">{service.timeline}</p>
+                            </div>
+                            <div>
+                              <h4 className="font-semibold mb-3 flex items-center gap-2">
+                                <Users className="w-4 h-4" />
+                                Team Size
+                              </h4>
+                              <p className="text-muted-foreground">{service.team}</p>
+                            </div>
+                          </div>
+
+                          <div>
+                            <h4 className="font-semibold mb-3">What's Included</h4>
+                            <div className="grid md:grid-cols-2 gap-2">
+                              {service.includes?.map((item, idx) => (
+                                <div key={idx} className="flex items-center gap-2">
+                                  <CheckCircle className="w-4 h-4 text-accent flex-shrink-0" />
+                                  <span className="text-sm">{item}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div>
+                            <h4 className="font-semibold mb-3">Our Process</h4>
+                            <div className="space-y-2">
+                              {service.process?.map((step, idx) => (
+                                <div key={idx} className="flex items-center gap-3">
+                                  <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-medium">
+                                    {idx + 1}
+                                  </div>
+                                  <span className="text-sm">{step}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="border-t pt-4">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <p className="text-2xl font-bold text-primary">{service.price}</p>
+                                <p className="text-sm text-muted-foreground">Starting price</p>
+                              </div>
+                              <Button className="px-6">Get Started</Button>
+                            </div>
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </Card>
               );
