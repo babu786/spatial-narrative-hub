@@ -95,58 +95,58 @@ export default function Contact() {
       <NavbarWebDev />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-6">
+      <section className="pt-20 pb-8 px-4 sm:pt-24 sm:pb-12 sm:px-6">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">
             Get In <span className="text-gradient">Touch</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 px-2">
             Ready to start your next project? Contact us today for a free consultation and let's bring your vision to life.
           </p>
           
           {/* Quick Actions */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12">
             <Button 
               variant="gradient" 
               size="lg" 
-              className="text-lg px-8 py-4"
+              className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
             >
-              <Phone className="w-5 h-5 mr-2" />
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Call Now
             </Button>
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-6 pb-16">
-        <div className="grid lg:grid-cols-3 gap-12">
+      <div className="container mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="glass-card p-8">
-              <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+            <Card className="glass-card p-4 sm:p-6 lg:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send us a Message</h2>
               
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <form className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <Label htmlFor="firstName">First Name *</Label>
-                    <Input id="firstName" placeholder="Enter your first name" className="mt-2" />
+                    <Label htmlFor="firstName" className="text-sm">First Name *</Label>
+                    <Input id="firstName" placeholder="Enter your first name" className="mt-1 sm:mt-2" />
                   </div>
                   <div>
-                    <Label htmlFor="lastName">Last Name *</Label>
-                    <Input id="lastName" placeholder="Enter your last name" className="mt-2" />
+                    <Label htmlFor="lastName" className="text-sm">Last Name *</Label>
+                    <Input id="lastName" placeholder="Enter your last name" className="mt-1 sm:mt-2" />
                   </div>
                 </div>
                 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input id="email" type="email" placeholder="Enter your email" className="mt-2" />
+                    <Label htmlFor="email" className="text-sm">Email Address *</Label>
+                    <Input id="email" type="email" placeholder="Enter your email" className="mt-1 sm:mt-2" />
                   </div>
                   <div>
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" placeholder="Enter your phone number" className="mt-2" />
+                    <Label htmlFor="phone" className="text-sm">Phone Number</Label>
+                    <Input id="phone" placeholder="Enter your phone number" className="mt-1 sm:mt-2" />
                   </div>
                 </div>
                 
@@ -250,23 +250,23 @@ This inquiry was submitted through the BUGnBULL contact form.
           </div>
           
           {/* Contact Information */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             
             {/* Contact Details */}
-            <Card className="glass-card p-6">
-              <h3 className="text-xl font-bold mb-6">Contact Information</h3>
-              <div className="space-y-6">
+            <Card className="glass-card p-4 sm:p-6">
+              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Contact Information</h3>
+              <div className="space-y-4 sm:space-y-6">
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
-                    <div key={index} className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-6 h-6 text-primary-foreground" />
+                    <div key={index} className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-1">{info.title}</h4>
+                        <h4 className="font-semibold mb-1 text-sm sm:text-base">{info.title}</h4>
                         {info.details.map((detail, idx) => (
-                          <p key={idx} className="text-muted-foreground text-sm">{detail}</p>
+                          <p key={idx} className="text-muted-foreground text-xs sm:text-sm">{detail}</p>
                         ))}
                         <p className="text-xs text-accent mt-1">{info.description}</p>
                       </div>

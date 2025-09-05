@@ -109,71 +109,71 @@ export default function Pricing() {
       <NavbarWebDev />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-6">
+      <section className="pt-20 pb-8 px-4 sm:pt-24 sm:pb-12 sm:px-6">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">
             Simple <span className="text-gradient">Pricing</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 px-2">
             Choose the perfect plan for your business. All packages include modern design, mobile optimization, and professional support.
           </p>
           
           {/* Special Offer Banner */}
-          <div className="glass-card p-6 rounded-2xl max-w-2xl mx-auto mb-12 animate-pulse-glow">
-            <h3 className="text-2xl font-bold text-gradient mb-2">Limited Time Offer!</h3>
-            <p className="text-lg text-muted-foreground mb-2">
+          <div className="glass-card p-4 sm:p-6 rounded-xl sm:rounded-2xl max-w-2xl mx-auto mb-8 sm:mb-12 animate-pulse-glow">
+            <h3 className="text-lg sm:text-2xl font-bold text-gradient mb-1 sm:mb-2">Limited Time Offer!</h3>
+            <p className="text-sm sm:text-lg text-muted-foreground mb-1 sm:mb-2">
               Get 25% OFF on any package + Free SEO optimization
             </p>
-            <p className="text-sm text-accent font-semibold">Offer expires in 30 days</p>
+            <p className="text-xs sm:text-sm text-accent font-semibold">Offer expires in 30 days</p>
           </div>
         </div>
       </section>
 
       {/* Pricing Plans */}
-      <section className="px-6 pb-16">
+      <section className="px-4 pb-12 sm:px-6 sm:pb-16">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {plans.map((plan, index) => {
               const Icon = plan.icon;
               return (
                 <Card 
                   key={index} 
-                  className={`glass-card p-8 relative hover:shadow-glow transition-all duration-500 ${
+                  className={`glass-card p-4 sm:p-6 lg:p-8 relative hover:shadow-glow transition-all duration-500 ${
                     plan.popular ? 'ring-2 ring-primary' : ''
                   }`}
                 >
                   {plan.popular && (
-                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-primary text-primary-foreground">
+                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-primary text-primary-foreground text-xs">
                       Most Popular
                     </Badge>
                   )}
                   
-                  <div className="text-center mb-8">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${plan.color} flex items-center justify-center mx-auto mb-4`}>
-                      <Icon className="w-8 h-8 text-white" />
+                  <div className="text-center mb-6 sm:mb-8">
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-r ${plan.color} flex items-center justify-center mx-auto mb-3 sm:mb-4`}>
+                      <Icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
                     </div>
                     
-                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2">{plan.name}</h3>
+                    <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 px-2">{plan.description}</p>
                     
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-primary">{plan.price}</span>
-                      <span className="text-muted-foreground ml-2">{plan.period}</span>
+                    <div className="mb-3 sm:mb-4">
+                      <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">{plan.price}</span>
+                      <span className="text-muted-foreground ml-1 sm:ml-2 text-sm">{plan.period}</span>
                     </div>
                   </div>
                   
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                     {plan.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                      <div key={idx} className="flex items-center gap-2 sm:gap-3">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
+                        <span className="text-xs sm:text-sm">{feature}</span>
                       </div>
                     ))}
                     
                     {plan.notIncluded.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3 opacity-50">
-                        <X className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                        <span className="text-sm line-through">{feature}</span>
+                      <div key={idx} className="flex items-center gap-2 sm:gap-3 opacity-50">
+                        <X className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground flex-shrink-0" />
+                        <span className="text-xs sm:text-sm line-through">{feature}</span>
                       </div>
                     ))}
                   </div>

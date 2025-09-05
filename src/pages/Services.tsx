@@ -116,43 +116,43 @@ export default function Services() {
       <NavbarWebDev />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-6">
+      <section className="pt-20 pb-8 px-4 sm:pt-24 sm:pb-12 sm:px-6">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">
             Our <span className="text-gradient">Services</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 px-2">
             We offer comprehensive web development and digital solutions to help your business thrive in the digital world.
           </p>
         </div>
       </section>
 
       {/* Main Services Grid */}
-      <section className="py-12 px-6">
+      <section className="py-8 px-4 sm:py-12 sm:px-6">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="glass-card p-8 hover:shadow-glow transition-all duration-500 group">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-8 h-8 text-white" />
+                <Card key={index} className="glass-card p-4 sm:p-6 lg:p-8 hover:shadow-glow transition-all duration-500 group">
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-muted-foreground mb-6">{service.description}</p>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-4">{service.title}</h3>
+                  <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">{service.description}</p>
                   
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-accent" />
-                        <span className="text-sm">{feature}</span>
+                      <div key={idx} className="flex items-center gap-2 sm:gap-3">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
+                        <span className="text-xs sm:text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-semibold text-primary">{service.price}</span>
+                    <span className="text-base sm:text-lg font-semibold text-primary">{service.price}</span>
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button variant="ghost" className="group/btn">
@@ -292,17 +292,17 @@ export default function Services() {
       </section>
 
       {/* Additional Services */}
-      <section className="py-12 px-6 bg-muted/30">
+      <section className="py-8 px-4 sm:py-12 sm:px-6 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Additional Services</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center mb-8 sm:mb-12">Additional Services</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {additionalServices.map((service, index) => {
               const Icon = service.icon;
               return (
-                <div key={index} className="glass-card p-6 text-center hover:shadow-glow transition-all duration-300">
-                  <Icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.desc}</p>
+                <div key={index} className="glass-card p-4 sm:p-6 text-center hover:shadow-glow transition-all duration-300">
+                  <Icon className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-primary mx-auto mb-3 sm:mb-4" />
+                  <h3 className="text-base sm:text-lg lg:text-xl font-semibold mb-1 sm:mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground text-sm sm:text-base">{service.desc}</p>
                 </div>
               );
             })}
@@ -311,10 +311,10 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-6">
+      <section className="py-12 px-4 sm:py-16 sm:px-6">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Start Your Project?</h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6">Ready to Start Your Project?</h2>
+          <p className="text-base sm:text-xl text-muted-foreground mb-6 sm:mb-8 px-2">
             Let's discuss how we can help bring your vision to life
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

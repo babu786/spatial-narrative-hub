@@ -118,30 +118,30 @@ export default function Learn() {
       <NavbarWebDev />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-6">
+      <section className="pt-20 pb-8 px-4 sm:pt-24 sm:pb-12 sm:px-6">
         <div className="container mx-auto text-center">
-          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 glass-card px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-4 sm:mb-6">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-sm font-medium">Learn Web Development</span>
+            <span className="text-xs sm:text-sm font-medium">Learn Web Development</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">
             Master <span className="text-gradient">Web Development</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 px-2">
             From beginner to expert, learn full-stack web development, build secure websites, 
             and create powerful web applications with modern technologies.
           </p>
           
           {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 max-w-3xl mx-auto mb-6 sm:mb-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div key={index} className="glass-card p-4 rounded-2xl text-center">
-                  <Icon className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <h3 className="font-bold text-sm mb-1">{feature.title}</h3>
-                  <p className="text-xs text-muted-foreground">{feature.desc}</p>
+                <div key={index} className="glass-card p-3 sm:p-4 rounded-xl sm:rounded-2xl text-center">
+                  <Icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-primary mx-auto mb-1 sm:mb-2" />
+                  <h3 className="font-bold text-xs sm:text-sm mb-0.5 sm:mb-1">{feature.title}</h3>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground">{feature.desc}</p>
                 </div>
               );
             })}
@@ -216,22 +216,22 @@ export default function Learn() {
 
 
       {/* Learning Paths */}
-      <section className="py-16 px-6 bg-muted/30">
+      <section className="py-12 px-4 sm:py-16 sm:px-6 bg-muted/30">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">
               Learning <span className="text-gradient">Paths</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-2">
               Follow structured learning paths designed to take you from beginner to expert
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
             {learningPaths.map((path, index) => (
-              <Card key={index} className="glass-card p-8 text-center hover:shadow-glow transition-all duration-500">
-                <h3 className="text-2xl font-bold mb-4 text-gradient">{path.title}</h3>
-                <p className="text-muted-foreground mb-6">{path.description}</p>
+              <Card key={index} className="glass-card p-4 sm:p-6 lg:p-8 text-center hover:shadow-glow transition-all duration-500">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-gradient">{path.title}</h3>
+                <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">{path.description}</p>
                 
                 <div className="space-y-3 mb-6">
                   {path.courses.map((course, courseIndex) => (
@@ -328,7 +328,7 @@ export default function Learn() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {courses.map((course, index) => {
               const Icon = course.icon;
               return (
@@ -337,35 +337,35 @@ export default function Learn() {
                     <img 
                       src={course.thumbnail} 
                       alt={course.title}
-                      className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-32 sm:h-36 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-3 right-3">
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3">
                       <Badge variant="outline" className="bg-background/80 text-xs">
                         {course.level}
                       </Badge>
                     </div>
                   </div>
                   
-                  <div className="p-5">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Icon className="w-4 h-4 text-primary" />
-                      <h3 className="font-bold text-lg">{course.title}</h3>
+                  <div className="p-3 sm:p-4 lg:p-5">
+                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                      <Icon className="w-4 h-4 text-primary flex-shrink-0" />
+                      <h3 className="font-bold text-sm sm:text-base lg:text-lg">{course.title}</h3>
                     </div>
                     
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{course.description}</p>
+                    <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">{course.description}</p>
                     
-                    <div className="flex items-center gap-3 mb-4 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 text-xs text-muted-foreground">
                       <div className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        {course.duration}
+                        <Clock className="w-3 h-3 flex-shrink-0" />
+                        <span className="truncate">{course.duration}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <BookOpen className="w-3 h-3" />
-                        {course.lessons} lessons
+                        <BookOpen className="w-3 h-3 flex-shrink-0" />
+                        <span className="truncate">{course.lessons} lessons</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                        {course.rating}
+                        <Star className="w-3 h-3 fill-yellow-400 text-yellow-400 flex-shrink-0" />
+                        <span>{course.rating}</span>
                       </div>
                     </div>
                     
