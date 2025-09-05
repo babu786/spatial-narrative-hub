@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Scene3D } from "@/components/Scene3D";
 import { ArrowRight, Phone, Play, Star, Users, Award, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const WebDevHero = () => {
   return (
@@ -56,30 +57,37 @@ export const WebDevHero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <Link to="/contact">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="group transform hover:scale-105 transition-all duration-300 text-lg px-8 py-4"
+              >
+                Start Your Project
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+              </Button>
+            </Link>
             <Button 
-              variant="hero" 
-              size="lg" 
-              className="group transform hover:scale-105 transition-all duration-300 text-lg px-8 py-4"
-            >
-              Start Your Project
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </Button>
-            <Button 
+              asChild
               variant="glass" 
               size="lg" 
               className="group transform hover:scale-105 transition-all duration-300 text-lg px-8 py-4"
             >
-              <Phone className="w-5 h-5" />
-              Call Now: +918764551955
+              <a href="tel:+918764551955">
+                <Phone className="w-5 h-5" />
+                Call Now: +918764551955
+              </a>
             </Button>
-            <Button 
-              variant="glass" 
-              size="lg"
-              className="group transform hover:scale-105 transition-all duration-300 text-lg px-8 py-4"
-            >
-              <Play className="w-5 h-5" />
-              Learn With Us
-            </Button>
+            <Link to="/learn">
+              <Button 
+                variant="glass" 
+                size="lg"
+                className="group transform hover:scale-105 transition-all duration-300 text-lg px-8 py-4"
+              >
+                <Play className="w-5 h-5" />
+                Learn With Us
+              </Button>
+            </Link>
           </div>
 
           {/* Stats with 3D Cards */}
