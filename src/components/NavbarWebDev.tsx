@@ -76,17 +76,31 @@ export const NavbarWebDev = () => {
             />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-lg glass-card hover:shadow-glow transition-all duration-300"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleTheme}
+              className="p-2 hover:bg-primary/10 transition-all duration-300"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5 text-primary" />
+              ) : (
+                <Moon className="w-5 h-5 text-primary" />
+              )}
+            </Button>
+            <button
+              className="p-2 rounded-lg glass-card hover:shadow-glow transition-all duration-300"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -106,7 +120,7 @@ export const NavbarWebDev = () => {
                   {item.label}
                 </Link>
               ))}
-              <div className="flex items-center justify-between mt-4">
+              <div className="flex items-center justify-center mt-4">
                 <ContactModal
                   trigger={
                     <Button variant="gradient" size="sm" className="animate-pulse-glow">
@@ -114,18 +128,6 @@ export const NavbarWebDev = () => {
                     </Button>
                   }
                 />
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={toggleTheme}
-                  className="p-2 hover:bg-primary/10 transition-all duration-300"
-                >
-                  {theme === "dark" ? (
-                    <Sun className="w-5 h-5 text-primary" />
-                  ) : (
-                    <Moon className="w-5 h-5 text-primary" />
-                  )}
-                </Button>
               </div>
             </div>
           </div>
