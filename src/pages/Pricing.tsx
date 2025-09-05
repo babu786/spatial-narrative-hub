@@ -195,7 +195,6 @@ export default function Pricing() {
                 <p className="text-muted-foreground text-sm mb-4">{addon.desc}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xl font-bold text-primary">{addon.price}</span>
-                  <Button variant="ghost" size="sm">Add to Plan</Button>
                 </div>
               </Card>
             ))}
