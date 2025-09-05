@@ -12,7 +12,7 @@ export const NavbarWebDev = () => {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Learn", href: "/learn" },
     { label: "Pricing", href: "/pricing" },
     { label: "Team", href: "/team" },
     { label: "Contact", href: "/contact" },

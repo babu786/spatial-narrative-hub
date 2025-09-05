@@ -19,7 +19,9 @@ import {
   ExternalLink,
   Mail,
   Phone,
-  MapPin
+  MapPin,
+  BookOpen,
+  Clock
 } from "lucide-react";
 
 const Index = () => {
@@ -47,21 +49,27 @@ const Index = () => {
     }
   ];
 
-  const portfolioPreview = [
+  const learningPreview = [
     {
-      title: "E-Commerce Platform",
-      category: "E-commerce",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop"
+      title: "Web Design Fundamentals",
+      description: "Master HTML, CSS, and design principles from scratch",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
+      level: "Beginner",
+      duration: "6 weeks"
     },
     {
-      title: "Healthcare Management System",
-      category: "Web App", 
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop"
+      title: "UI/UX Design Masterclass",
+      description: "Learn user interface and experience design",
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop", 
+      level: "Intermediate",
+      duration: "8 weeks"
     },
     {
-      title: "Fitness Tracking App",
-      category: "Mobile App",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop"
+      title: "Responsive Web Design",
+      description: "Create websites that work on all devices",
+      image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=300&fit=crop",
+      level: "Intermediate", 
+      duration: "4 weeks"
     }
   ];
 
@@ -131,45 +139,60 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Portfolio Preview */}
+      {/* Learning Preview */}
       <section className="py-16 px-6 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Latest <span className="text-gradient">Projects</span>
+              Learn <span className="text-gradient">Web Design</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-              Take a look at some of our recent work and see how we've helped businesses succeed.
+              Master web design with our comprehensive courses taught by industry experts.
             </p>
-            <Link to="/portfolio">
+            <Link to="/learn">
               <Button variant="outline" className="group">
-                View Full Portfolio
+                View All Courses
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
               </Button>
             </Link>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {portfolioPreview.map((project, index) => (
+            {learningPreview.map((course, index) => (
               <Card key={index} className="glass-card overflow-hidden group hover:shadow-glow transition-all duration-500">
                 <div className="relative overflow-hidden">
                   <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    src={course.image} 
+                    alt={course.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute top-4 right-4">
+                    <Badge variant="secondary" className="bg-primary text-primary-foreground text-xs">
+                      {course.level}
+                    </Badge>
+                  </div>
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Link to="/portfolio">
+                    <Link to="/learn">
                       <Button size="sm" variant="ghost" className="text-white hover:bg-white/20">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        View Details
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        Start Learning
                       </Button>
                     </Link>
                   </div>
-                  <Badge className="absolute top-4 left-4">{project.category}</Badge>
                 </div>
-                <div className="p-4">
-                  <h3 className="font-bold group-hover:text-primary transition-colors">{project.title}</h3>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg mb-2">{course.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{course.description}</p>
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      {course.duration}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="w-4 h-4" />
+                      {course.level}
+                    </div>
+                  </div>
                 </div>
               </Card>
             ))}

@@ -158,7 +158,7 @@ export default function Services() {
               Get Free Quote
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-              View Portfolio
+              Learn Web Design
             </Button>
           </div>
         </div>
