@@ -101,17 +101,14 @@ export default function Contact() {
           
           {/* Quick Actions */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
+            <Button 
+              variant="gradient" 
+              size="lg" 
+              className="text-lg px-8 py-4"
+              onClick={() => window.location.href = "tel:+918764551955"}
+            >
               <Phone className="w-5 h-5 mr-2" />
               Call Now
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-              <Calendar className="w-5 h-5 mr-2" />
-              Schedule Meeting
-            </Button>
-            <Button variant="ghost" size="lg" className="text-lg px-8 py-4">
-              <MessageSquare className="w-5 h-5 mr-2" />
-              Live Chat
             </Button>
           </div>
         </div>
