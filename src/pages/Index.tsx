@@ -240,19 +240,19 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto mb-12 px-4">
             <Card 
-              className="glass-card p-6 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-105"
+              className="glass-card p-4 md:p-6 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
               onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
             >
-              <Phone className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h3 className="font-bold mb-2">Call Us</h3>
-              <p className="text-muted-foreground text-sm">+918764551955</p>
-              <p className="text-xs text-accent mt-2">Click to call or get QR</p>
+              <Phone className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+              <h3 className="font-bold mb-1 md:mb-2 text-sm md:text-base">Call Us</h3>
+              <p className="text-muted-foreground text-xs md:text-sm">+918764551955</p>
+              <p className="text-xs text-accent mt-1 md:mt-2">Click to call or get QR</p>
             </Card>
             
             <Card 
-              className="glass-card p-6 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-105"
+              className="glass-card p-4 md:p-6 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95 sm:col-span-2 md:col-span-1"
               onClick={() => {
                 const subject = "General Inquiry";
                 const body = "Hi,\n\nI'm interested in your services. Please provide more information.\n\nThank you!";
@@ -260,24 +260,24 @@ const Index = () => {
                 window.location.href = mailtoUrl;
               }}
             >
-              <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h3 className="font-bold mb-2">Email Us</h3>
-              <p className="text-muted-foreground text-sm">contact@bugnbull.com</p>
-              <p className="text-xs text-accent mt-2">Click to email</p>
+              <Mail className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+              <h3 className="font-bold mb-1 md:mb-2 text-sm md:text-base">Email Us</h3>
+              <p className="text-muted-foreground text-xs md:text-sm break-all">contact@bugnbull.com</p>
+              <p className="text-xs text-accent mt-1 md:mt-2">Click to email</p>
             </Card>
             
             <Card 
-              className="glass-card p-6 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-105"
+              className="glass-card p-4 md:p-6 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95 col-span-1 sm:col-start-1"
               onClick={() => {
                 const address = "Mumbai, Maharashtra, India";
                 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
                 window.open(mapsUrl, '_blank');
               }}
             >
-              <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h3 className="font-bold mb-2">Visit Us</h3>
-              <p className="text-muted-foreground text-sm">Mumbai, India</p>
-              <p className="text-xs text-accent mt-2">Click to view on maps</p>
+              <MapPin className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+              <h3 className="font-bold mb-1 md:mb-2 text-sm md:text-base">Visit Us</h3>
+              <p className="text-muted-foreground text-xs md:text-sm">Mumbai, India</p>
+              <p className="text-xs text-accent mt-1 md:mt-2">Click to view on maps</p>
             </Card>
           </div>
           
