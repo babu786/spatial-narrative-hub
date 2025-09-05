@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const WebDevHero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden py-20">
       {/* 3D Background Scene */}
       <Scene3D className="absolute inset-0 z-0" />
       
