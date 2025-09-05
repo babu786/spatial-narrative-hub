@@ -333,7 +333,8 @@ export default function Learn() {
                                   size="sm"
                                   onClick={() => {
                                     const message = `Hi! I'm interested in enrolling in the ${course.title} course. Can you please provide more details about the enrollment process?`;
-                                    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+                                    const phoneNumber = "919876543210"; // Replace with your WhatsApp business number
+                                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
                                     window.open(whatsappUrl, '_blank');
                                   }}
                                 >
