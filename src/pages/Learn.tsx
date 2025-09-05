@@ -328,7 +328,15 @@ export default function Learn() {
                                     Save {Math.round((1 - parseInt(course.price.replace(/[₹,]/g, '')) / parseInt(course.originalPrice.replace(/[₹,]/g, ''))) * 100)}%
                                   </div>
                                 </div>
-                                <Button variant="gradient" size="sm">
+                                <Button 
+                                  variant="gradient" 
+                                  size="sm"
+                                  onClick={() => {
+                                    const message = `Hi! I'm interested in enrolling in the ${course.title} course. Can you please provide more details about the enrollment process?`;
+                                    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+                                    window.open(whatsappUrl, '_blank');
+                                  }}
+                                >
                                   Enroll Now
                                 </Button>
                               </div>
