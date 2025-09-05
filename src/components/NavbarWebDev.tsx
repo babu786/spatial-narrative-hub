@@ -14,6 +14,7 @@ export const NavbarWebDev = () => {
     { label: "Services", href: "/services" },
     { label: "Learn", href: "/learn" },
     { label: "Pricing", href: "/pricing" },
+    { label: "Team", href: "/team" },
     { label: "Contact", href: "/contact" },
   ];
 

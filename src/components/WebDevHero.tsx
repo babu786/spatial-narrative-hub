@@ -46,7 +46,7 @@ export const WebDevHero = () => {
             </div>
             <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
               <Users className="w-4 h-4 text-accent" />
-              <span className="text-sm font-medium">Professional Service</span>
+              <span className="text-sm font-medium">Expert Team</span>
             </div>
             <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
               <Award className="w-4 h-4 text-accent" />
@@ -88,7 +88,7 @@ export const WebDevHero = () => {
               { label: "Projects Completed", value: "500+", delay: "0s", icon: Award },
               { label: "Happy Clients", value: "200+", delay: "0.2s", icon: Users },
               { label: "Years Experience", value: "8+", delay: "0.4s", icon: Star },
-              { label: "Technologies Used", value: "15+", delay: "0.6s", icon: Zap },
+              { label: "Team Members", value: "15+", delay: "0.6s", icon: Zap },
             ].map((stat, index) => {
               const Icon = stat.icon;
               return (
