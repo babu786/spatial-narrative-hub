@@ -380,7 +380,7 @@ export default function Learn() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
                 <BookOpen className="w-5 h-5 mr-2" />
-                Start Free Trial
+                Schedule Consultation
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-4">
                 Schedule Consultation
