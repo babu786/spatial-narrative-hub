@@ -318,7 +318,11 @@ This inquiry was submitted through the BUGnBULL contact form.
               <p className="text-muted-foreground text-sm mb-3">
                 For urgent issues with existing projects
               </p>
-              <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+              <Button 
+                variant="outline" 
+                className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+                onClick={() => window.location.href = "tel:+918764551955"}
+              >
                 <Phone className="w-4 h-4 mr-2" />
                 Call Emergency Line
               </Button>
