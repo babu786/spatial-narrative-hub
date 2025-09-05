@@ -144,10 +144,66 @@ export default function Learn() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
-              <BookOpen className="w-5 h-5 mr-2" />
-              Start Learning Now
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
+                  <BookOpen className="w-5 h-5 mr-2" />
+                  Start Learning Now
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl text-center">Get in Touch</DialogTitle>
+                  <DialogDescription className="text-center">
+                    Choose your preferred way to contact us to start learning
+                  </DialogDescription>
+                </DialogHeader>
+                
+                <div className="space-y-4">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full text-lg py-4"
+                    onClick={() => {
+                      const message = "Hi! I'm interested in starting my web development learning journey. Can you please provide more details about the courses?";
+                      const phoneNumber = "918764551955";
+                      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                      window.open(whatsappUrl, '_blank');
+                    }}
+                  >
+                    <Smartphone className="w-5 h-5 mr-2" />
+                    WhatsApp Contact
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full text-lg py-4"
+                    onClick={() => {
+                      window.location.href = "tel:+918764551955";
+                    }}
+                  >
+                    <Zap className="w-5 h-5 mr-2" />
+                    Call Now
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full text-lg py-4"
+                    onClick={() => {
+                      const subject = "Interest in Web Development Courses";
+                      const body = "Hi,\n\nI'm interested in starting my web development learning journey. Please provide more details about your courses and enrollment process.\n\nThank you!";
+                      const mailtoUrl = `mailto:contact@bugnbull.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                      window.location.href = mailtoUrl;
+                    }}
+                  >
+                    <Search className="w-5 h-5 mr-2" />
+                    Email Contact
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4">
               <Play className="w-5 h-5 mr-2" />
               Watch Preview
