@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import Map from "@/components/Map";
 import { 
   MapPin, 
   Phone, 
@@ -332,20 +333,11 @@ This inquiry was submitted through the BUGnBULL contact form.
         </div>
       </div>
 
-      {/* Map Section (Placeholder) */}
+      {/* Map Section */}
       <section className="py-16 px-6 bg-muted/30">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">Find Us on Map</h2>
-          <div className="glass-card p-8 text-center">
-            <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">Interactive Map Coming Soon</h3>
-            <p className="text-muted-foreground mb-4">
-              We're working on an interactive map to help you find our offices easily.
-            </p>
-            <Button variant="outline">
-              Get Directions
-            </Button>
-          </div>
+          <Map />
         </div>
       </section>
     </div>
