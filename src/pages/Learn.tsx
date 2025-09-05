@@ -185,12 +185,14 @@ export default function Learn() {
                 </div>
                 
                 <div className="glass-card p-4 rounded-2xl mb-6">
-                  <div className="text-sm text-muted-foreground mb-2">Complete in {path.duration}</div>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="text-sm text-muted-foreground">Complete in {path.duration}</div>
+                    <div className="text-xs text-accent">Save {Math.round((1 - parseInt(path.price.replace(/[₹,]/g, '')) / parseInt(path.originalPrice.replace(/[₹,]/g, ''))) * 100)}%</div>
+                  </div>
                   <div className="flex items-center justify-center gap-2">
                     <span className="text-3xl font-bold text-primary">{path.price}</span>
                     <span className="text-muted-foreground line-through">{path.originalPrice}</span>
                   </div>
-                  <div className="text-xs text-accent mt-1">Save {Math.round((1 - parseInt(path.price.replace(/[₹,]/g, '')) / parseInt(path.originalPrice.replace(/[₹,]/g, ''))) * 100)}%</div>
                 </div>
                 
                 <Button variant="gradient" size="lg" className="w-full">
