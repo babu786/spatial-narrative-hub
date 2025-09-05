@@ -26,8 +26,9 @@ export const CallDesktopModal: React.FC<CallDesktopModalProps> = ({
   useEffect(() => {
     const generateQR = async () => {
       try {
-        const url = window.location.href;
-        const qrDataUrl = await QRCode.toDataURL(url, {
+        // Generate QR code with direct tel: link for immediate calling
+        const telUrl = `tel:${phoneNumber}`;
+        const qrDataUrl = await QRCode.toDataURL(telUrl, {
           width: 200,
           margin: 2,
           color: {
@@ -44,7 +45,7 @@ export const CallDesktopModal: React.FC<CallDesktopModalProps> = ({
     if (open) {
       generateQR();
     }
-  }, [open]);
+  }, [open, phoneNumber]);
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
@@ -54,7 +55,7 @@ export const CallDesktopModal: React.FC<CallDesktopModalProps> = ({
             Call from Mobile Device
           </DialogTitle>
           <DialogDescription className="text-center py-4">
-            For the best calling experience, please open this website on your smartphone and tap the call button.
+            Scan the QR code below with your smartphone to call us directly, or use the number provided.
           </DialogDescription>
         </DialogHeader>
         
@@ -63,7 +64,7 @@ export const CallDesktopModal: React.FC<CallDesktopModalProps> = ({
             {qrCodeUrl ? (
               <img 
                 src={qrCodeUrl} 
-                alt="QR Code to open website on mobile" 
+                alt="QR Code to call directly" 
                 className="w-32 h-32 mx-auto mb-2 rounded-lg"
               />
             ) : (
@@ -72,7 +73,7 @@ export const CallDesktopModal: React.FC<CallDesktopModalProps> = ({
               </div>
             )}
             <p className="text-sm text-muted-foreground mb-2">
-              Scan QR code or visit on mobile
+              Scan to call directly
             </p>
           </div>
           
