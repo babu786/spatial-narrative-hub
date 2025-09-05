@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, X, Zap, Crown, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Pricing() {
   const plans = [
@@ -239,11 +240,15 @@ export default function Pricing() {
             Contact us for a free consultation and custom quote for your project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
-              Get Free Quote
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-              Schedule Call
+            <Link to="/contact">
+              <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
+                Get Free Quote
+              </Button>
+            </Link>
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4">
+              <a href="tel:+918764551955">
+                Schedule Call
+              </a>
             </Button>
           </div>
         </div>
