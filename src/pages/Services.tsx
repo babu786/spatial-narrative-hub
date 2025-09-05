@@ -375,7 +375,12 @@ export default function Services() {
                 </div>
               </DialogContent>
             </Dialog>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-4"
+              onClick={() => window.location.href = '/learn'}
+            >
               Learn Web Design
             </Button>
           </div>
