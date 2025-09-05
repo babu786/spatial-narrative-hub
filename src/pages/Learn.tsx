@@ -195,7 +195,17 @@ export default function Learn() {
                   </div>
                 </div>
                 
-                <Button variant="gradient" size="lg" className="w-full">
+                <Button 
+                  variant="gradient" 
+                  size="lg" 
+                  className="w-full"
+                  onClick={() => {
+                    const message = `Hi! I'm interested in the ${path.title} learning path (${path.duration}). Can you please provide more details about enrollment and the courses included?`;
+                    const phoneNumber = "918764551955";
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                  }}
+                >
                   Start Learning Path
                 </Button>
               </Card>
