@@ -168,9 +168,12 @@ export default function Pricing() {
                   
                   <Button 
                     variant={plan.popular ? "gradient" : "outline"} 
-                    className="w-full text-lg py-3"
+                    className="w-full text-lg py-3 min-h-[3rem]"
+                    style={{ minWidth: "100%" }}
                   >
-                    {plan.popular ? "Get Started" : "Choose Plan"}
+                    <span className="inline-flex items-center justify-center w-full">
+                      {plan.popular ? "Get Started" : "Choose Plan"}
+                    </span>
                   </Button>
                 </Card>
               );
