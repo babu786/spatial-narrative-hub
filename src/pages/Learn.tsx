@@ -414,6 +414,18 @@ export default function Learn() {
                       size="lg" 
                       className="w-full text-lg py-4"
                       onClick={() => {
+                        window.location.href = "tel:+918764551955";
+                      }}
+                    >
+                      <Zap className="w-5 h-5 mr-2" />
+                      Call Now
+                    </Button>
+                    
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      className="w-full text-lg py-4"
+                      onClick={() => {
                         const subject = "Consultation Request - Web Development Courses";
                         const body = "Hi,\n\nI'm interested in scheduling a consultation for your web development courses. Please provide more details about the consultation process.\n\nThank you!";
                         const mailtoUrl = `mailto:contact@bugnbull.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
