@@ -11,7 +11,7 @@ export const Team = () => {
       social: {
         linkedin: "#",
         github: "#", 
-        email: "rohit@webdevpro.com"
+        email: "rohit@bugnbull.com"
       }
     },
     {
@@ -23,7 +23,7 @@ export const Team = () => {
       social: {
         linkedin: "#",
         github: "#",
-        email: "priya@webdevpro.com"
+        email: "priya@bugnbull.com"
       }
     },
     {
@@ -35,7 +35,7 @@ export const Team = () => {
       social: {
         linkedin: "#",
         github: "#",
-        email: "arjun@webdevpro.com"
+        email: "arjun@bugnbull.com"
       }
     },
     {
@@ -47,7 +47,7 @@ export const Team = () => {
       social: {
         linkedin: "#",
         github: "#",
-        email: "sneha@webdevpro.com"
+        email: "sneha@bugnbull.com"
       }
     }
   ];

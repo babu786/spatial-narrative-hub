@@ -31,7 +31,7 @@ export const NavbarWebDev = () => {
             <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center animate-pulse-glow">
               <Code2 className="w-6 h-6 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold text-gradient">WebDev Pro</span>
+            <span className="text-xl font-bold text-gradient">BUGnBULL</span>
           </Link>
 
           {/* Desktop Navigation */}

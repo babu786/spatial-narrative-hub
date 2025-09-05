@@ -23,13 +23,13 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 98765 43210", "+91 87654 32109"],
+      details: ["+918764551955", "+918764551956"],
       description: "Available Mon-Fri, 9 AM to 6 PM IST"
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["hello@webdevpro.in", "support@webdevpro.in"],
+      details: ["contact@bugnbull.com", "support@bugnbull.com"],
       description: "We reply within 2 hours"
     },
     {
@@ -57,19 +57,19 @@ export default function Contact() {
     {
       city: "Mumbai",
       address: "123 Tech Park, Sector 5, Mumbai, MH 400001",
-      phone: "+91 98765 43210",
+      phone: "+918764551955",
       isMain: true
     },
     {
       city: "Bangalore", 
       address: "456 Innovation Hub, Koramangala, Bangalore, KA 560034",
-      phone: "+91 87654 32109",
+      phone: "+918764551956",
       isMain: false
     },
     {
       city: "Delhi",
       address: "789 Business Center, Connaught Place, New Delhi, DL 110001", 
-      phone: "+91 76543 21098",
+      phone: "+918764551957",
       isMain: false
     }
   ];

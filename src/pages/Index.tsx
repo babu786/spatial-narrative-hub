@@ -329,13 +329,13 @@ const Index = () => {
             <Card className="glass-card p-6 text-center hover:shadow-glow transition-all duration-300">
               <Phone className="w-8 h-8 text-primary mx-auto mb-3" />
               <h3 className="font-bold mb-2">Call Us</h3>
-              <p className="text-muted-foreground text-sm">+91 98765 43210</p>
+              <p className="text-muted-foreground text-sm">+918764551955</p>
             </Card>
             
             <Card className="glass-card p-6 text-center hover:shadow-glow transition-all duration-300">
               <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
               <h3 className="font-bold mb-2">Email Us</h3>
-              <p className="text-muted-foreground text-sm">hello@webdevpro.in</p>
+              <p className="text-muted-foreground text-sm">contact@bugnbull.com</p>
             </Card>
             
             <Card className="glass-card p-6 text-center hover:shadow-glow transition-all duration-300">

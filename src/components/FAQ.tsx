@@ -111,10 +111,10 @@ export const FAQ = () => {
                 Contact Us Now
               </a>
               <a
-                href="tel:+919876543210"
+                href="tel:+918764551955"
                 className="inline-flex items-center justify-center px-6 py-3 glass-card rounded-lg font-medium hover:bg-background/20 transition-colors duration-300"
               >
-                Call: +91 98765 43210
+                Call: +918764551955
               </a>
             </div>
           </div>

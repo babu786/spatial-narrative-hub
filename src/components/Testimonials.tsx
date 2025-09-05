@@ -7,7 +7,7 @@ export const Testimonials = () => {
       company: "Kumar Enterprises",
       image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=150&h=150&fit=crop&crop=face",
       rating: 5,
-      text: "WebDev Pro transformed our online presence completely! Their team delivered a stunning e-commerce website that increased our sales by 300%. Highly professional and responsive.",
+      text: "BUGnBULL transformed our online presence completely! Their team delivered a stunning e-commerce website that increased our sales by 300%. Highly professional and responsive.",
       project: "E-commerce Website"
     },
     {
@@ -62,7 +62,7 @@ export const Testimonials = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our satisfied clients have to say 
-            about working with WebDev Pro and the results they've achieved.
+            about working with BUGnBULL and the results they've achieved.
           </p>
         </div>
 

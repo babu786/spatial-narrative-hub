@@ -45,7 +45,7 @@ export const ContactWebDev = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Call Us Now</h4>
-                  <p className="text-muted-foreground">+91 98765 43210</p>
+                  <p className="text-muted-foreground">+918764551955</p>
                   <p className="text-sm text-accent">Available 24/7</p>
                 </div>
               </div>
@@ -56,7 +56,7 @@ export const ContactWebDev = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Email Us</h4>
-                  <p className="text-muted-foreground">hello@webdevpro.com</p>
+                  <p className="text-muted-foreground">contact@bugnbull.com</p>
                   <p className="text-sm text-accent">Response within 2 hours</p>
                 </div>
               </div>
@@ -75,7 +75,7 @@ export const ContactWebDev = () => {
 
             {/* Why Choose Us */}
             <div className="glass-card p-6 rounded-2xl">
-              <h4 className="font-semibold text-lg mb-6">Why Choose WebDev Pro?</h4>
+              <h4 className="font-semibold text-lg mb-6">Why Choose BUGnBULL?</h4>
               <div className="space-y-4">
                 {[
                   { icon: Award, text: "8+ years of proven expertise" },
@@ -112,7 +112,7 @@ export const ContactWebDev = () => {
                   <label className="block text-sm font-medium mb-2">Phone Number *</label>
                   <Input 
                     type="tel" 
-                    placeholder="+91 98765 43210" 
+                    placeholder="+918764551955" 
                     className="bg-background/50 border-primary/20 focus:border-primary transition-colors" 
                     required
                   />
@@ -198,10 +198,10 @@ export const ContactWebDev = () => {
               For urgent project requirements or technical support
             </p>
             <a
-              href="tel:+919876543210"
+              href="tel:+918764551955"
               className="inline-flex items-center justify-center px-6 py-3 bg-gradient-accent rounded-lg font-medium hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
             >
-              Call Now: +91 98765 43210
+              Call Now: +918764551955
             </a>
           </div>
         </div>

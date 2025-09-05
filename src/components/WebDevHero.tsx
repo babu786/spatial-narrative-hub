@@ -70,7 +70,7 @@ export const WebDevHero = () => {
               className="group transform hover:scale-105 transition-all duration-300 text-lg px-8 py-4"
             >
               <Phone className="w-5 h-5" />
-              Call Now: +91 98765 43210
+              Call Now: +918764551955
             </Button>
             <Button 
               variant="glass" 

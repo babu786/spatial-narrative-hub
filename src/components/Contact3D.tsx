@@ -73,7 +73,7 @@ export const Contact3D = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Email Me</h4>
-                  <p className="text-muted-foreground">hello@3dexperience.dev</p>
+                  <p className="text-muted-foreground">contact@bugnbull.com</p>
                 </div>
               </div>
 
@@ -83,7 +83,7 @@ export const Contact3D = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Call Me</h4>
-                  <p className="text-muted-foreground">+91 98765 43210</p>
+                  <p className="text-muted-foreground">+918764551955</p>
                 </div>
               </div>
 
