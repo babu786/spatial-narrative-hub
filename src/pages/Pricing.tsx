@@ -2,7 +2,15 @@ import { NavbarWebDev } from "@/components/NavbarWebDev";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, X, Zap, Crown, Rocket } from "lucide-react";
+import { 
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { CheckCircle, X, Zap, Crown, Rocket, Smartphone, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Pricing() {
@@ -166,15 +174,71 @@ export default function Pricing() {
                     ))}
                   </div>
                   
-                  <Button 
-                    variant={plan.popular ? "gradient" : "outline"} 
-                    className="w-full text-lg py-3 min-h-[3rem]"
-                    style={{ minWidth: "100%" }}
-                  >
-                    <span className="inline-flex items-center justify-center w-full">
-                      {plan.popular ? "Get Started" : "Choose Plan"}
-                    </span>
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button 
+                        variant={plan.popular ? "gradient" : "outline"} 
+                        className="w-full text-lg py-3 min-h-[3rem]"
+                        style={{ minWidth: "100%" }}
+                      >
+                        <span className="inline-flex items-center justify-center w-full">
+                          Get Started
+                        </span>
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-md">
+                      <DialogHeader>
+                        <DialogTitle className="text-2xl text-center">Get in Touch</DialogTitle>
+                        <DialogDescription className="text-center">
+                          Choose your preferred way to contact us about the {plan.name} plan
+                        </DialogDescription>
+                      </DialogHeader>
+                      
+                      <div className="space-y-4">
+                        <Button 
+                          variant="outline" 
+                          size="lg" 
+                          className="w-full text-lg py-4"
+                          onClick={() => {
+                            const message = `Hi! I'm interested in the ${plan.name} plan (${plan.price}). Can you please provide more details about this package?`;
+                            const phoneNumber = "918764551955";
+                            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                            window.open(whatsappUrl, '_blank');
+                          }}
+                        >
+                          <Smartphone className="w-5 h-5 mr-2" />
+                          WhatsApp Contact
+                        </Button>
+                        
+                        <Button 
+                          variant="outline" 
+                          size="lg" 
+                          className="w-full text-lg py-4"
+                          onClick={() => {
+                            window.location.href = "tel:+918764551955";
+                          }}
+                        >
+                          <Zap className="w-5 h-5 mr-2" />
+                          Call Now
+                        </Button>
+                        
+                        <Button 
+                          variant="outline" 
+                          size="lg" 
+                          className="w-full text-lg py-4"
+                          onClick={() => {
+                            const subject = `Interest in ${plan.name} Plan`;
+                            const body = `Hi,\n\nI'm interested in the ${plan.name} plan (${plan.price}). Please provide more details about this package and the next steps.\n\nThank you!`;
+                            const mailtoUrl = `mailto:contact@bugnbull.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                            window.location.href = mailtoUrl;
+                          }}
+                        >
+                          <Search className="w-5 h-5 mr-2" />
+                          Email Contact
+                        </Button>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </Card>
               );
             })}
