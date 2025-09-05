@@ -378,10 +378,54 @@ export default function Learn() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
-                <BookOpen className="w-5 h-5 mr-2" />
-                Schedule Consultation
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="gradient" size="lg" className="text-lg px-8 py-4">
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    Schedule Consultation
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-md">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl text-center">Get in Touch</DialogTitle>
+                    <DialogDescription className="text-center">
+                      Choose your preferred way to contact us for consultation
+                    </DialogDescription>
+                  </DialogHeader>
+                  
+                  <div className="space-y-4">
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      className="w-full text-lg py-4"
+                      onClick={() => {
+                        const message = "Hi! I'm interested in scheduling a consultation for web development courses. Can you please provide more details?";
+                        const phoneNumber = "918764551955";
+                        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                        window.open(whatsappUrl, '_blank');
+                      }}
+                    >
+                      <Smartphone className="w-5 h-5 mr-2" />
+                      WhatsApp Contact
+                    </Button>
+                    
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      className="w-full text-lg py-4"
+                      onClick={() => {
+                        const subject = "Consultation Request - Web Development Courses";
+                        const body = "Hi,\n\nI'm interested in scheduling a consultation for your web development courses. Please provide more details about the consultation process.\n\nThank you!";
+                        const mailtoUrl = `mailto:contact@bugnbull.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                        window.location.href = mailtoUrl;
+                      }}
+                    >
+                      <Search className="w-5 h-5 mr-2" />
+                      Email Contact
+                    </Button>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
             
             <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground">
