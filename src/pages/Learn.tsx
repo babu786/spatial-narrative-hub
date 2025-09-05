@@ -22,103 +22,103 @@ export default function Learn() {
   const courses = [
     {
       id: 1,
-      title: "Complete Web Design Fundamentals",
-      description: "Master the basics of web design including HTML, CSS, typography, color theory, and layout principles.",
-      level: "Beginner",
-      duration: "6 weeks",
-      students: 1250,
+      title: "Complete Web Development Bootcamp",
+      description: "Comprehensive full stack program covering HTML, CSS, JavaScript, React, and Node.js. Build responsive, dynamic websites from scratch.",
+      level: "Beginner to Advanced",
+      duration: "20 weeks",
+      students: 2850,
       rating: 4.9,
-      price: "₹2,999",
-      originalPrice: "₹4,999",
+      price: "₹11,999",
+      originalPrice: "₹19,999",
       thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=200&fit=crop",
-      instructor: "Priya Sharma",
-      lessons: 24,
-      skills: ["HTML5", "CSS3", "Responsive Design", "Typography"],
+      instructor: "Expert Team",
+      lessons: 80,
+      skills: ["HTML5", "CSS3", "JavaScript", "React", "Node.js", "MongoDB"],
       icon: Code,
       featured: true
     },
     {
       id: 2,
-      title: "UI/UX Design Masterclass",
-      description: "Learn user interface and experience design principles, wireframing, prototyping, and user research.",
+      title: "Frontend Development Mastery",
+      description: "Master modern frontend technologies including React, Vue.js, and advanced JavaScript concepts for building interactive web applications.",
       level: "Intermediate",
-      duration: "8 weeks",
-      students: 890,
+      duration: "12 weeks",
+      students: 1890,
       rating: 4.8,
-      price: "₹4,999",
-      originalPrice: "₹7,999",
+      price: "₹8,999",
+      originalPrice: "₹14,999",
       thumbnail: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=200&fit=crop",
-      instructor: "Rohit Kumar",
-      lessons: 32,
-      skills: ["Figma", "Adobe XD", "User Research", "Prototyping"],
+      instructor: "Expert Team",
+      lessons: 48,
+      skills: ["React", "Vue.js", "TypeScript", "State Management"],
       icon: Palette,
       featured: true
     },
     {
       id: 3,
-      title: "Responsive Web Design",
-      description: "Create websites that work perfectly on all devices using modern CSS techniques and frameworks.",
+      title: "Backend Development with Node.js",
+      description: "Learn server-side development with Node.js, Express, and database management for full-stack applications.",
       level: "Intermediate",
-      duration: "4 weeks",
-      students: 670,
+      duration: "10 weeks",
+      students: 1270,
       rating: 4.7,
-      price: "₹2,499",
-      originalPrice: "₹3,999",
+      price: "₹7,499",
+      originalPrice: "₹12,999",
       thumbnail: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=200&fit=crop",
-      instructor: "Arjun Singh",
-      lessons: 18,
-      skills: ["Bootstrap", "Flexbox", "Grid", "Media Queries"],
+      instructor: "Expert Team",
+      lessons: 40,
+      skills: ["Node.js", "Express", "MongoDB", "REST APIs"],
       icon: Layout,
       featured: false
     },
     {
       id: 4,
-      title: "Mobile-First Design",
-      description: "Design and develop websites with mobile-first approach for optimal user experience.",
+      title: "Web Security & Cyber Protection",
+      description: "Learn to build secure websites and protect against cyber threats with modern security practices.",
       level: "Advanced",
-      duration: "5 weeks",
-      students: 420,
-      rating: 4.6,
-      price: "₹3,499",
-      originalPrice: "₹5,499",
+      duration: "8 weeks",
+      students: 920,
+      rating: 4.8,
+      price: "₹9,499",
+      originalPrice: "₹15,499",
       thumbnail: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=200&fit=crop",
-      instructor: "Sneha Patel",
-      lessons: 22,
-      skills: ["Progressive Web Apps", "Touch Interfaces", "Performance"],
+      instructor: "Expert Team",
+      lessons: 32,
+      skills: ["Web Security", "SSL/TLS", "Authentication", "Data Protection"],
       icon: Smartphone,
       featured: false
     },
     {
       id: 5,
-      title: "Web Design SEO Fundamentals",
-      description: "Learn how to design websites that rank well in search engines and attract organic traffic.",
-      level: "Beginner",
-      duration: "3 weeks",
-      students: 580,
-      rating: 4.5,
-      price: "₹1,999",
-      originalPrice: "₹2,999",
+      title: "E-commerce Website Development",
+      description: "Build complete e-commerce solutions with payment gateways, user management, and modern features.",
+      level: "Intermediate",
+      duration: "16 weeks",
+      students: 1580,
+      rating: 4.9,
+      price: "₹13,999",
+      originalPrice: "₹22,999",
       thumbnail: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=400&h=200&fit=crop",
-      instructor: "Vikash Agarwal",
-      lessons: 15,
-      skills: ["SEO Basics", "Site Structure", "Page Speed", "Meta Tags"],
+      instructor: "Expert Team",
+      lessons: 64,
+      skills: ["E-commerce", "Payment Integration", "User Management", "Shopping Cart"],
       icon: Search,
       featured: false
     },
     {
       id: 6,
-      title: "Advanced CSS Animations",
-      description: "Create stunning animations and interactions using CSS3 and modern web technologies.",
-      level: "Advanced",
-      duration: "4 weeks",
-      students: 350,
-      rating: 4.8,
-      price: "₹3,999",
-      originalPrice: "₹5,999",
+      title: "Digital Marketing for Developers",
+      description: "Learn SEO, digital marketing strategies, and how to promote websites effectively online.",
+      level: "Beginner",
+      duration: "6 weeks",
+      students: 1150,
+      rating: 4.6,
+      price: "₹4,999",
+      originalPrice: "₹7,999",
       thumbnail: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=200&fit=crop",
-      instructor: "Meera Joshi",
-      lessons: 20,
-      skills: ["CSS Animations", "Transitions", "SVG", "WebGL"],
+      instructor: "Expert Team",
+      lessons: 24,
+      skills: ["SEO", "Google Ads", "Social Media Marketing", "Analytics"],
       icon: Zap,
       featured: false
     }
@@ -126,20 +126,20 @@ export default function Learn() {
 
   const learningPaths = [
     {
-      title: "Complete Beginner",
-      description: "Start from scratch and become a web designer",
-      courses: ["Web Design Fundamentals", "Responsive Web Design", "Web Design SEO"],
-      duration: "13 weeks",
-      price: "₹6,999",
-      originalPrice: "₹10,997"
+      title: "Full-Stack Developer",
+      description: "Complete journey from frontend to backend development",
+      courses: ["Complete Web Development", "Backend Development", "Web Security"],
+      duration: "38 weeks",
+      price: "₹24,999",
+      originalPrice: "₹47,997"
     },
     {
-      title: "UI/UX Specialist",
-      description: "Focus on user experience and interface design",
-      courses: ["UI/UX Design Masterclass", "Mobile-First Design", "Advanced CSS Animations"],
-      duration: "17 weeks", 
-      price: "₹9,999",
-      originalPrice: "₹15,497"
+      title: "E-commerce Specialist",
+      description: "Build and market complete e-commerce solutions",
+      courses: ["Frontend Development", "E-commerce Development", "Digital Marketing"],
+      duration: "34 weeks", 
+      price: "₹22,999",
+      originalPrice: "₹42,997"
     }
   ];
 
@@ -159,15 +159,15 @@ export default function Learn() {
         <div className="container mx-auto text-center">
           <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-6">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-sm font-medium">Learn Web Design</span>
+            <span className="text-sm font-medium">Learn Web Development</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Master <span className="text-gradient">Web Design</span>
+            Master <span className="text-gradient">Web Development</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            From beginner to expert, learn modern web design techniques, UI/UX principles, 
-            and build stunning websites that convert visitors into customers.
+            From beginner to expert, learn full-stack web development, build secure websites, 
+            and create powerful web applications with modern technologies.
           </p>
           
           {/* Quick Stats */}
@@ -334,7 +334,7 @@ export default function Learn() {
               All <span className="text-gradient">Courses</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Choose from our complete collection of web design courses
+              Choose from our complete collection of web development courses
             </p>
           </div>
 
@@ -401,10 +401,10 @@ export default function Learn() {
         <div className="container mx-auto text-center">
           <div className="glass-card p-12 rounded-3xl max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Start Your <span className="text-gradient">Web Design Journey?</span>
+              Ready to Start Your <span className="text-gradient">Web Development Journey?</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of students who have transformed their careers with our comprehensive web design courses.
+              Join thousands of students who have transformed their careers with our comprehensive web development courses.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
