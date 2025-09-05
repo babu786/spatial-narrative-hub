@@ -240,19 +240,19 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto mb-12 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 max-w-3xl lg:max-w-4xl mx-auto mb-8 lg:mb-12 px-4">
             <Card 
-              className="glass-card p-4 md:p-6 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
+              className="glass-card p-3 sm:p-4 lg:p-5 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-[1.02] active:scale-95 min-h-[100px] sm:min-h-[120px] flex flex-col justify-center"
               onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
             >
-              <Phone className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
-              <h3 className="font-bold mb-1 md:mb-2 text-sm md:text-base">Call Us</h3>
-              <p className="text-muted-foreground text-xs md:text-sm">+918764551955</p>
-              <p className="text-xs text-accent mt-1 md:mt-2">Click to call or get QR</p>
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-primary mx-auto mb-1.5 sm:mb-2" />
+              <h3 className="font-semibold mb-1 text-xs sm:text-sm lg:text-base">Call Us</h3>
+              <p className="text-muted-foreground text-[10px] sm:text-xs lg:text-sm font-medium">+918764551955</p>
+              <p className="text-[9px] sm:text-[10px] lg:text-xs text-accent mt-1 opacity-80">Tap to call</p>
             </Card>
             
             <Card 
-              className="glass-card p-4 md:p-6 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95 sm:col-span-2 md:col-span-1"
+              className="glass-card p-3 sm:p-4 lg:p-5 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-[1.02] active:scale-95 min-h-[100px] sm:min-h-[120px] flex flex-col justify-center"
               onClick={() => {
                 const subject = "General Inquiry";
                 const body = "Hi,\n\nI'm interested in your services. Please provide more information.\n\nThank you!";
@@ -260,24 +260,24 @@ const Index = () => {
                 window.location.href = mailtoUrl;
               }}
             >
-              <Mail className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
-              <h3 className="font-bold mb-1 md:mb-2 text-sm md:text-base">Email Us</h3>
-              <p className="text-muted-foreground text-xs md:text-sm break-all">contact@bugnbull.com</p>
-              <p className="text-xs text-accent mt-1 md:mt-2">Click to email</p>
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-primary mx-auto mb-1.5 sm:mb-2" />
+              <h3 className="font-semibold mb-1 text-xs sm:text-sm lg:text-base">Email Us</h3>
+              <p className="text-muted-foreground text-[10px] sm:text-xs lg:text-sm font-medium truncate px-1">contact@bugnbull.com</p>
+              <p className="text-[9px] sm:text-[10px] lg:text-xs text-accent mt-1 opacity-80">Tap to email</p>
             </Card>
             
             <Card 
-              className="glass-card p-4 md:p-6 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95 col-span-1 sm:col-start-1"
+              className="glass-card p-3 sm:p-4 lg:p-5 text-center hover:shadow-glow transition-all duration-300 cursor-pointer hover:scale-[1.02] active:scale-95 min-h-[100px] sm:min-h-[120px] flex flex-col justify-center"
               onClick={() => {
                 const address = "Mumbai, Maharashtra, India";
                 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
                 window.open(mapsUrl, '_blank');
               }}
             >
-              <MapPin className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
-              <h3 className="font-bold mb-1 md:mb-2 text-sm md:text-base">Visit Us</h3>
-              <p className="text-muted-foreground text-xs md:text-sm">Mumbai, India</p>
-              <p className="text-xs text-accent mt-1 md:mt-2">Click to view on maps</p>
+              <MapPin className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-primary mx-auto mb-1.5 sm:mb-2" />
+              <h3 className="font-semibold mb-1 text-xs sm:text-sm lg:text-base">Visit Us</h3>
+              <p className="text-muted-foreground text-[10px] sm:text-xs lg:text-sm font-medium">Mumbai, India</p>
+              <p className="text-[9px] sm:text-[10px] lg:text-xs text-accent mt-1 opacity-80">Tap for maps</p>
             </Card>
           </div>
           
