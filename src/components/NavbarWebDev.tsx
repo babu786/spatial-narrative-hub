@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X, Code2, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export const NavbarWebDev = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const navItems = [
     { label: "Home", href: "#home" },
@@ -13,6 +15,10 @@ export const NavbarWebDev = () => {
     { label: "Team", href: "#team" },
     { label: "Contact", href: "#contact" },
   ];
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-primary/20">
@@ -41,8 +47,20 @@ export const NavbarWebDev = () => {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
+          {/* Desktop CTA & Theme Toggle */}
+          <div className="hidden md:flex items-center gap-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleTheme}
+              className="p-2 hover:bg-primary/10 transition-all duration-300"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5 text-primary" />
+              ) : (
+                <Moon className="w-5 h-5 text-primary" />
+              )}
+            </Button>
             <Button variant="gradient" size="sm" className="animate-pulse-glow">
               Get Quote
             </Button>
@@ -76,9 +94,23 @@ export const NavbarWebDev = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="gradient" size="sm" className="mt-4 w-fit animate-pulse-glow">
-                Get Quote
-              </Button>
+              <div className="flex items-center justify-between mt-4">
+                <Button variant="gradient" size="sm" className="animate-pulse-glow">
+                  Get Quote
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={toggleTheme}
+                  className="p-2 hover:bg-primary/10 transition-all duration-300"
+                >
+                  {theme === "dark" ? (
+                    <Sun className="w-5 h-5 text-primary" />
+                  ) : (
+                    <Moon className="w-5 h-5 text-primary" />
+                  )}
+                </Button>
+              </div>
             </div>
           </div>
         )}
