@@ -251,19 +251,65 @@ export default function Learn() {
                   </div>
                 </div>
                 
-                <Button 
-                  variant="gradient" 
-                  size="lg" 
-                  className="w-full"
-                  onClick={() => {
-                    const message = `Hi! I'm interested in the ${path.title} learning path (${path.duration}). Can you please provide more details about enrollment and the courses included?`;
-                    const phoneNumber = "918764551955";
-                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-                    window.open(whatsappUrl, '_blank');
-                  }}
-                >
-                  Start Learning Path
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="gradient" size="lg" className="w-full">
+                      Start Learning Path
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-md">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl text-center">Get in Touch</DialogTitle>
+                      <DialogDescription className="text-center">
+                        Choose your preferred way to contact us about the {path.title}
+                      </DialogDescription>
+                    </DialogHeader>
+                    
+                    <div className="space-y-4">
+                      <Button 
+                        variant="outline" 
+                        size="lg" 
+                        className="w-full text-lg py-4"
+                        onClick={() => {
+                          const message = `Hi! I'm interested in the ${path.title} learning path (${path.duration}). Can you please provide more details about enrollment and the courses included?`;
+                          const phoneNumber = "918764551955";
+                          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                          window.open(whatsappUrl, '_blank');
+                        }}
+                      >
+                        <Smartphone className="w-5 h-5 mr-2" />
+                        WhatsApp Contact
+                      </Button>
+                      
+                      <Button 
+                        variant="outline" 
+                        size="lg" 
+                        className="w-full text-lg py-4"
+                        onClick={() => {
+                          window.location.href = "tel:+918764551955";
+                        }}
+                      >
+                        <Zap className="w-5 h-5 mr-2" />
+                        Call Now
+                      </Button>
+                      
+                      <Button 
+                        variant="outline" 
+                        size="lg" 
+                        className="w-full text-lg py-4"
+                        onClick={() => {
+                          const subject = `Interest in ${path.title} Learning Path`;
+                          const body = `Hi,\n\nI'm interested in the ${path.title} learning path (${path.duration}). Please provide more details about enrollment and the courses included.\n\nThank you!`;
+                          const mailtoUrl = `mailto:contact@bugnbull.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                          window.location.href = mailtoUrl;
+                        }}
+                      >
+                        <Search className="w-5 h-5 mr-2" />
+                        Email Contact
+                      </Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </Card>
             ))}
           </div>
