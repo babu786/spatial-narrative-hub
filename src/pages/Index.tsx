@@ -316,11 +316,21 @@ const Index = () => {
                 Get Free Quote
               </Button>
             </Link>
-            <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                Contact Us
+            {/* Mobile: Call functionality, Desktop: Contact form */}
+            <div className="block md:hidden">
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4">
+                <a href="tel:+918764551955">
+                  Contact Us
+                </a>
               </Button>
-            </Link>
+            </div>
+            <div className="hidden md:block">
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
