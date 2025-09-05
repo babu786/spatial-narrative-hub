@@ -557,6 +557,12 @@ export default function Learn() {
           </div>
         </div>
       </section>
+
+      <CallDesktopModal 
+        open={showCallModal} 
+        onOpenChange={setShowCallModal}
+        phoneNumber="+918764551955"
+      />
     </div>
   );
 }
