@@ -317,16 +317,18 @@ export default function Learn() {
 
                             {/* Pricing */}
                             <div className="glass-card p-3 rounded-lg">
-                              <div className="text-center">
-                                <div className="text-xs text-muted-foreground mb-1">Course Price</div>
-                                <div className="flex items-center justify-center gap-2 mb-1">
-                                  <span className="text-xl font-bold text-primary">{course.price}</span>
-                                  <span className="text-sm text-muted-foreground line-through">{course.originalPrice}</span>
+                              <div className="flex items-center justify-between">
+                                <div>
+                                  <div className="text-xs text-muted-foreground mb-1">Course Price</div>
+                                  <div className="flex items-center gap-2 mb-1">
+                                    <span className="text-xl font-bold text-primary">{course.price}</span>
+                                    <span className="text-sm text-muted-foreground line-through">{course.originalPrice}</span>
+                                  </div>
+                                  <div className="text-xs text-accent">
+                                    Save {Math.round((1 - parseInt(course.price.replace(/[₹,]/g, '')) / parseInt(course.originalPrice.replace(/[₹,]/g, ''))) * 100)}%
+                                  </div>
                                 </div>
-                                <div className="text-xs text-accent mb-3">
-                                  Save {Math.round((1 - parseInt(course.price.replace(/[₹,]/g, '')) / parseInt(course.originalPrice.replace(/[₹,]/g, ''))) * 100)}%
-                                </div>
-                                <Button variant="gradient" size="sm" className="w-full">
+                                <Button variant="gradient" size="sm">
                                   Enroll Now
                                 </Button>
                               </div>
