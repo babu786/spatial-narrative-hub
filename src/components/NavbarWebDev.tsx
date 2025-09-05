@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Code2, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Link, useLocation } from "react-router-dom";
+import { ContactModal } from "@/components/ContactModal";
 
 export const NavbarWebDev = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,9 +67,13 @@ export const NavbarWebDev = () => {
                 <Moon className="w-5 h-5 text-primary" />
               )}
             </Button>
-            <Button variant="gradient" size="sm" className="animate-pulse-glow">
-              Get Quote
-            </Button>
+            <ContactModal
+              trigger={
+                <Button variant="gradient" size="sm" className="animate-pulse-glow">
+                  Get Quote
+                </Button>
+              }
+            />
           </div>
 
           {/* Mobile Menu Button */}
@@ -102,9 +107,13 @@ export const NavbarWebDev = () => {
                 </Link>
               ))}
               <div className="flex items-center justify-between mt-4">
-                <Button variant="gradient" size="sm" className="animate-pulse-glow">
-                  Get Quote
-                </Button>
+                <ContactModal
+                  trigger={
+                    <Button variant="gradient" size="sm" className="animate-pulse-glow">
+                      Get Quote
+                    </Button>
+                  }
+                />
                 <Button
                   variant="ghost"
                   size="sm"
