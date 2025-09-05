@@ -73,24 +73,6 @@ const Index = () => {
     }
   ];
 
-  const teamPreview = [
-    {
-      name: "Rajesh Kumar",
-      role: "Founder & Lead Developer",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
-    },
-    {
-      name: "Priya Sharma", 
-      role: "UI/UX Design Lead",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face"
-    },
-    {
-      name: "Amit Singh",
-      role: "Senior Frontend Developer", 
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face"
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <NavbarWebDev />
@@ -278,61 +260,6 @@ const Index = () => {
               View Detailed Pricing
             </Button>
           </Link>
-        </div>
-      </section>
-
-      {/* Team Preview */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Meet Our <span className="text-gradient">Team</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-              Our experienced team of developers and designers are here to bring your vision to life.
-            </p>
-            <Link to="/team">
-              <Button variant="outline" className="group">
-                Meet The Full Team
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
-              </Button>
-            </Link>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {teamPreview.map((member, index) => (
-              <Card key={index} className="glass-card text-center hover:shadow-glow transition-all duration-500 group">
-                <div className="p-6">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-20 h-20 rounded-full mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <h3 className="text-lg font-bold mb-1">{member.name}</h3>
-                  <p className="text-primary text-sm">{member.role}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mt-12">
-            <div className="glass-card p-4 text-center">
-              <div className="text-2xl font-bold text-primary">15+</div>
-              <div className="text-sm text-muted-foreground">Team Members</div>
-            </div>
-            <div className="glass-card p-4 text-center">
-              <div className="text-2xl font-bold text-accent">8+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
-            </div>
-            <div className="glass-card p-4 text-center">
-              <div className="text-2xl font-bold text-primary">500+</div>
-              <div className="text-sm text-muted-foreground">Projects Done</div>
-            </div>
-            <div className="glass-card p-4 text-center">
-              <div className="text-2xl font-bold text-accent">99%</div>
-              <div className="text-sm text-muted-foreground">Client Satisfaction</div>
-            </div>
-          </div>
         </div>
       </section>
 
