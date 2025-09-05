@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { CallDesktopModal } from "@/components/CallDesktopModal";
+import { handleCallClick } from "@/utils/deviceDetection";
+import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Clock, Award, Users, Headphones } from "lucide-react";
 
 export const ContactWebDev = () => {
+  const [showCallModal, setShowCallModal] = useState(false);
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Background Effects */}
@@ -197,15 +201,21 @@ export const ContactWebDev = () => {
             <p className="text-muted-foreground mb-4 text-sm">
               For urgent project requirements or technical support
             </p>
-            <a
-              href="tel:+918764551955"
+            <Button 
               className="inline-flex items-center justify-center px-6 py-3 bg-gradient-accent rounded-lg font-medium hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
+              onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
             >
               Call Now: +918764551955
-            </a>
+            </Button>
           </div>
         </div>
       </div>
+
+      <CallDesktopModal 
+        open={showCallModal} 
+        onOpenChange={setShowCallModal}
+        phoneNumber="+918764551955"
+      />
     </section>
   );
 };

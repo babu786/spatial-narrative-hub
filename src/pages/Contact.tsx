@@ -5,6 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import GoogleMap from "@/components/GoogleMap";
+import { CallDesktopModal } from "@/components/CallDesktopModal";
+import { handleCallClick } from "@/utils/deviceDetection";
+import { useState } from "react";
 import { 
   MapPin, 
   Phone, 
@@ -20,6 +23,7 @@ import {
 } from "lucide-react";
 
 export default function Contact() {
+  const [showCallModal, setShowCallModal] = useState(false);
   const contactInfo = [
     {
       icon: Phone,
@@ -106,7 +110,7 @@ export default function Contact() {
               variant="gradient" 
               size="lg" 
               className="text-lg px-8 py-4"
-              onClick={() => window.location.href = "tel:+918764551955"}
+              onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
             >
               <Phone className="w-5 h-5 mr-2" />
               Call Now
@@ -322,7 +326,7 @@ This inquiry was submitted through the BUGnBULL contact form.
               <Button 
                 variant="outline" 
                 className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-                onClick={() => window.location.href = "tel:+918764551955"}
+                onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
               >
                 <Phone className="w-4 h-4 mr-2" />
                 Call Emergency Line
@@ -340,6 +344,12 @@ This inquiry was submitted through the BUGnBULL contact form.
           <GoogleMap />
         </div>
       </section>
+
+      <CallDesktopModal 
+        open={showCallModal} 
+        onOpenChange={setShowCallModal}
+        phoneNumber="+918764551955"
+      />
     </div>
   );
 }

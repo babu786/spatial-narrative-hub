@@ -3,6 +3,9 @@ import { NavbarWebDev } from "@/components/NavbarWebDev";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { CallDesktopModal } from "@/components/CallDesktopModal";
+import { handleCallClick } from "@/utils/deviceDetection";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { 
   Globe, 
@@ -23,6 +26,7 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const [showCallModal, setShowCallModal] = useState(false);
   const servicesPreview = [
     {
       icon: Globe,
@@ -264,22 +268,34 @@ const Index = () => {
             </Link>
             {/* Mobile: Call functionality, Desktop: Contact form */}
             <div className="block md:hidden">
-              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4">
-                <a href="tel:+918764551955">
-                  Contact Us
-                </a>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-lg px-8 py-4"
+                onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
+              >
+                Contact Us
               </Button>
             </div>
             <div className="hidden md:block">
-              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4">
-                <a href="tel:+918764551955">
-                  Contact Us
-                </a>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-lg px-8 py-4"
+                onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
+              >
+                Contact Us
               </Button>
             </div>
           </div>
         </div>
       </section>
+
+      <CallDesktopModal 
+        open={showCallModal} 
+        onOpenChange={setShowCallModal}
+        phoneNumber="+918764551955"
+      />
     </div>
   );
 };

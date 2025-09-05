@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Scene3D } from "@/components/Scene3D";
+import { CallDesktopModal } from "@/components/CallDesktopModal";
+import { handleCallClick } from "@/utils/deviceDetection";
+import { useState } from "react";
 import { ArrowRight, Phone, Play, Star, Users, Award, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const WebDevHero = () => {
+  const [showCallModal, setShowCallModal] = useState(false);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden py-20">
       {/* 3D Background Scene */}
@@ -68,15 +72,13 @@ export const WebDevHero = () => {
               </Button>
             </Link>
             <Button 
-              asChild
               variant="glass" 
               size="lg" 
               className="group transform hover:scale-105 transition-all duration-300 text-lg px-8 py-4"
+              onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
             >
-              <a href="tel:+918764551955">
-                <Phone className="w-5 h-5" />
-                Call Now: +918764551955
-              </a>
+              <Phone className="w-5 h-5" />
+              Call Now: +918764551955
             </Button>
             <Link to="/learn">
               <Button 
@@ -125,6 +127,12 @@ export const WebDevHero = () => {
           </div>
         </div>
       </div>
+
+      <CallDesktopModal 
+        open={showCallModal} 
+        onOpenChange={setShowCallModal}
+        phoneNumber="+918764551955"
+      />
     </section>
   );
 };

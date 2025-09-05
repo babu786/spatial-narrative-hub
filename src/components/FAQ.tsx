@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { CallDesktopModal } from "@/components/CallDesktopModal";
+import { handleCallClick } from "@/utils/deviceDetection";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [showCallModal, setShowCallModal] = useState(false);
 
   const faqs = [
     {
@@ -110,16 +113,22 @@ export const FAQ = () => {
               >
                 Contact Us Now
               </a>
-              <a
-                href="tel:+918764551955"
+              <button
                 className="inline-flex items-center justify-center px-6 py-3 glass-card rounded-lg font-medium hover:bg-background/20 transition-colors duration-300"
+                onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
               >
                 Call: +918764551955
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      <CallDesktopModal 
+        open={showCallModal} 
+        onOpenChange={setShowCallModal}
+        phoneNumber="+918764551955"
+      />
     </section>
   );
 };

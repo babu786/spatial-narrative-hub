@@ -1,6 +1,9 @@
 import { NavbarWebDev } from "@/components/NavbarWebDev";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { CallDesktopModal } from "@/components/CallDesktopModal";
+import { handleCallClick } from "@/utils/deviceDetection";
+import { useState } from "react";
 import { 
   Dialog,
   DialogContent,
@@ -26,6 +29,7 @@ import {
 } from "lucide-react";
 
 export default function Services() {
+  const [showCallModal, setShowCallModal] = useState(false);
   const services = [
     {
       icon: Globe,
@@ -251,9 +255,7 @@ export default function Services() {
                                       variant="outline" 
                                       size="lg" 
                                       className="w-full text-lg py-4"
-                                      onClick={() => {
-                                        window.location.href = "tel:+918764551955";
-                                      }}
+                                        onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
                                     >
                                       <Zap className="w-5 h-5 mr-2" />
                                       Call Now
@@ -350,9 +352,7 @@ export default function Services() {
                     variant="outline" 
                     size="lg" 
                     className="w-full text-lg py-4"
-                    onClick={() => {
-                      window.location.href = "tel:+918764551955";
-                    }}
+                    onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
                   >
                     <Zap className="w-5 h-5 mr-2" />
                     Call Now
@@ -386,6 +386,12 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <CallDesktopModal 
+        open={showCallModal} 
+        onOpenChange={setShowCallModal}
+        phoneNumber="+918764551955"
+      />
     </div>
   );
 }
