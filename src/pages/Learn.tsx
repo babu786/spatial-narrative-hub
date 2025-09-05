@@ -26,7 +26,8 @@ import {
   Layout,
   Smartphone,
   Search,
-  Zap
+  Zap,
+  QrCode
 } from "lucide-react";
 
 export default function Learn() {
@@ -184,8 +185,8 @@ export default function Learn() {
                     className="w-full text-lg py-4"
                     onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
                   >
-                    <Zap className="w-5 h-5 mr-2" />
-                    Call Now
+                    <QrCode className="w-5 h-5 mr-2" />
+                    Call Now (QR)
                   </Button>
                   
                   <Button 
@@ -288,8 +289,8 @@ export default function Learn() {
                         className="w-full text-lg py-4"
                         onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
                       >
-                        <Zap className="w-5 h-5 mr-2" />
-                        Call Now
+                        <QrCode className="w-5 h-5 mr-2" />
+                        Call Now (QR)
                       </Button>
                       
                       <Button 
@@ -516,8 +517,8 @@ export default function Learn() {
                       className="w-full text-lg py-4"
                       onClick={() => handleCallClick("+918764551955", () => setShowCallModal(true))}
                     >
-                      <Zap className="w-5 h-5 mr-2" />
-                      Call Now
+                      <QrCode className="w-5 h-5 mr-2" />
+                      Call Now (QR)
                     </Button>
                     
                     <Button 
