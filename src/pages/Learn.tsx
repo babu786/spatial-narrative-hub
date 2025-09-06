@@ -575,16 +575,21 @@ export default function Learn() {
             </DialogDescription>
           </DialogHeader>
           
-          <div className="aspect-video w-full bg-muted rounded-xl overflow-hidden">
-            <video
-              controls
+          <div className="aspect-video w-full bg-muted rounded-xl overflow-hidden relative">
+            <img 
+              src="/src/assets/video-poster.jpg" 
+              alt="Web Development Course Preview"
               className="w-full h-full object-cover"
-              poster="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop"
-            >
-              <source src="/videos/course-preview.mp4" type="video/mp4" />
-              <source src="/videos/course-preview.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+              <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors cursor-pointer">
+                <Play className="w-6 h-6 text-black ml-1" />
+              </div>
+            </div>
+            <div className="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-2 rounded-lg">
+              <p className="text-sm font-medium">Course Preview Coming Soon</p>
+              <p className="text-xs opacity-80">Placeholder for course video content</p>
+            </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
