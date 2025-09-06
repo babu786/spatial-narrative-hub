@@ -33,6 +33,7 @@ import {
 export default function Learn() {
   const [selectedCourse, setSelectedCourse] = useState<typeof courses[0] | null>(null);
   const [showCallModal, setShowCallModal] = useState(false);
+  const [showVideoPreview, setShowVideoPreview] = useState(false);
   const courses = [
     {
       id: 1,
@@ -206,7 +207,7 @@ export default function Learn() {
                 </div>
               </DialogContent>
             </Dialog>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4" onClick={() => setShowVideoPreview(true)}>
               <Play className="w-5 h-5 mr-2" />
               Watch Preview
             </Button>
@@ -563,6 +564,39 @@ export default function Learn() {
         onOpenChange={setShowCallModal}
         phoneNumber="+918764551955"
       />
+
+      {/* Video Preview Modal */}
+      <Dialog open={showVideoPreview} onOpenChange={setShowVideoPreview}>
+        <DialogContent className="max-w-4xl w-full">
+          <DialogHeader>
+            <DialogTitle className="text-2xl text-center">Course Preview</DialogTitle>
+            <DialogDescription className="text-center">
+              Get a glimpse of what you'll learn in our web development courses
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="aspect-video w-full bg-muted rounded-xl overflow-hidden">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Web Development Course Preview"
+              className="w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <Button variant="gradient" size="lg" className="flex-1" onClick={() => setShowVideoPreview(false)}>
+              <BookOpen className="w-5 h-5 mr-2" />
+              Start Learning Now
+            </Button>
+            <Button variant="outline" size="lg" className="flex-1" onClick={() => setShowVideoPreview(false)}>
+              Close Preview
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
