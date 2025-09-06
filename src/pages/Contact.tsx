@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import GoogleMap from "@/components/GoogleMap";
 import { CallDesktopModal } from "@/components/CallDesktopModal";
 import { handleCallClick } from "@/utils/deviceDetection";
@@ -24,6 +25,17 @@ import {
 
 export default function Contact() {
   const [showCallModal, setShowCallModal] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    service: '',
+    budget: '',
+    timeline: '',
+    message: ''
+  });
   const contactInfo = [
     {
       icon: Phone,
@@ -127,74 +139,124 @@ export default function Contact() {
             <Card className="glass-card p-4 sm:p-6 lg:p-8">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send us a Message</h2>
               
-              <form className="space-y-4 sm:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div>
-                    <Label htmlFor="firstName" className="text-sm">First Name *</Label>
-                    <Input id="firstName" placeholder="Enter your first name" className="mt-1 sm:mt-2" />
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName" className="text-sm font-medium">First Name *</Label>
+                    <Input 
+                      id="firstName" 
+                      placeholder="Enter your first name" 
+                      className="h-11"
+                      value={formData.firstName}
+                      onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                    />
                   </div>
-                  <div>
-                    <Label htmlFor="lastName" className="text-sm">Last Name *</Label>
-                    <Input id="lastName" placeholder="Enter your last name" className="mt-1 sm:mt-2" />
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName" className="text-sm font-medium">Last Name *</Label>
+                    <Input 
+                      id="lastName" 
+                      placeholder="Enter your last name" 
+                      className="h-11"
+                      value={formData.lastName}
+                      onChange={(e) => setFormData({...formData, lastName: e.target.value})}
+                    />
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div>
-                    <Label htmlFor="email" className="text-sm">Email Address *</Label>
-                    <Input id="email" type="email" placeholder="Enter your email" className="mt-1 sm:mt-2" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-sm font-medium">Email Address *</Label>
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="Enter your email" 
+                      className="h-11"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    />
                   </div>
-                  <div>
-                    <Label htmlFor="phone" className="text-sm">Phone Number</Label>
-                    <Input id="phone" placeholder="Enter your phone number" className="mt-1 sm:mt-2" />
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-sm font-medium">Phone Number</Label>
+                    <Input 
+                      id="phone" 
+                      placeholder="Enter your phone number" 
+                      className="h-11"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    />
                   </div>
                 </div>
                 
-                <div>
-                  <Label htmlFor="company">Company Name</Label>
-                  <Input id="company" placeholder="Enter your company name" className="mt-2" />
+                <div className="space-y-2">
+                  <Label htmlFor="company" className="text-sm font-medium">Company Name</Label>
+                  <Input 
+                    id="company" 
+                    placeholder="Enter your company name" 
+                    className="h-11"
+                    value={formData.company}
+                    onChange={(e) => setFormData({...formData, company: e.target.value})}
+                  />
                 </div>
                 
-                <div>
-                  <Label htmlFor="service">Service Needed</Label>
-                  <select className="w-full mt-2 p-3 rounded-md border border-input bg-background text-foreground">
-                    <option value="">Select a service</option>
-                    {services.map((service) => (
-                      <option key={service} value={service}>{service}</option>
-                    ))}
-                  </select>
+                <div className="space-y-2">
+                  <Label className="text-sm font-medium">Service Needed *</Label>
+                  <Select value={formData.service} onValueChange={(value) => setFormData({...formData, service: value})}>
+                    <SelectTrigger className="h-11">
+                      <SelectValue placeholder="Select a service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="web-development">🌐 Website Development</SelectItem>
+                      <SelectItem value="mobile-development">📱 Mobile App Development</SelectItem>
+                      <SelectItem value="ecommerce">🛒 E-commerce Solutions</SelectItem>
+                      <SelectItem value="ui-ux">🎨 UI/UX Design</SelectItem>
+                      <SelectItem value="digital-marketing">📈 Digital Marketing</SelectItem>
+                      <SelectItem value="custom-web-apps">⚙️ Custom Web Applications</SelectItem>
+                      <SelectItem value="seo">🔍 SEO Services</SelectItem>
+                      <SelectItem value="maintenance">🔧 Maintenance & Support</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 
-                <div>
-                  <Label htmlFor="budget">Project Budget</Label>
-                  <select className="w-full mt-2 p-3 rounded-md border border-input bg-background text-foreground">
-                    <option value="">Select budget range</option>
-                    <option value="under-25k">Under ₹25,000</option>
-                    <option value="25k-50k">₹25,000 - ₹50,000</option>
-                    <option value="50k-100k">₹50,000 - ₹1,00,000</option>
-                    <option value="above-100k">Above ₹1,00,000</option>
-                  </select>
+                <div className="space-y-2">
+                  <Label className="text-sm font-medium">Project Budget</Label>
+                  <Select value={formData.budget} onValueChange={(value) => setFormData({...formData, budget: value})}>
+                    <SelectTrigger className="h-11">
+                      <SelectValue placeholder="Select budget range" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="under-25k">💰 Under ₹25,000</SelectItem>
+                      <SelectItem value="25k-50k">💰 ₹25,000 - ₹50,000</SelectItem>
+                      <SelectItem value="50k-100k">💰 ₹50,000 - ₹1,00,000</SelectItem>
+                      <SelectItem value="above-100k">💰 Above ₹1,00,000</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 
-                <div>
-                  <Label htmlFor="timeline">Project Timeline</Label>
-                  <select className="w-full mt-2 p-3 rounded-md border border-input bg-background text-foreground">
-                    <option value="">Select timeline</option>
-                    <option value="urgent">ASAP (Rush project)</option>
-                    <option value="1-2weeks">1-2 weeks</option>
-                    <option value="1month">1 month</option>
-                    <option value="2-3months">2-3 months</option>
-                    <option value="flexible">Flexible</option>
-                  </select>
+                <div className="space-y-2">
+                  <Label className="text-sm font-medium">Project Timeline</Label>
+                  <Select value={formData.timeline} onValueChange={(value) => setFormData({...formData, timeline: value})}>
+                    <SelectTrigger className="h-11">
+                      <SelectValue placeholder="Select timeline" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="urgent">⚡ ASAP (Rush project)</SelectItem>
+                      <SelectItem value="1-2weeks">📅 1-2 weeks</SelectItem>
+                      <SelectItem value="1month">📅 1 month</SelectItem>
+                      <SelectItem value="2-3months">📅 2-3 months</SelectItem>
+                      <SelectItem value="flexible">🕐 Flexible</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 
-                <div>
-                  <Label htmlFor="message">Project Details *</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-sm font-medium">Project Details *</Label>
                   <Textarea 
                     id="message" 
                     placeholder="Tell us about your project requirements, goals, and any specific features you need..."
                     rows={5}
-                    className="mt-2"
+                    className="resize-none"
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
                   />
                 </div>
                 
@@ -203,35 +265,24 @@ export default function Contact() {
                   size="lg" 
                   className="w-full text-lg py-4"
                   onClick={() => {
-                    // Collect form data
-                    const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value || '';
-                    const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value || '';
-                    const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
-                    const phone = (document.getElementById('phone') as HTMLInputElement)?.value || '';
-                    const company = (document.getElementById('company') as HTMLInputElement)?.value || '';
-                    const service = (document.querySelector('select:nth-of-type(1)') as HTMLSelectElement)?.value || '';
-                    const budget = (document.querySelector('select:nth-of-type(2)') as HTMLSelectElement)?.value || '';
-                    const timeline = (document.querySelector('select:nth-of-type(3)') as HTMLSelectElement)?.value || '';
-                    const message = (document.getElementById('message') as HTMLTextAreaElement)?.value || '';
-                    
-                    // Create email content
-                    const subject = `New Project Inquiry from ${firstName} ${lastName}`;
+                    // Create email content using form state
+                    const subject = `New Project Inquiry from ${formData.firstName} ${formData.lastName}`;
                     const body = `
 New Project Inquiry Details:
 
 Personal Information:
-- Name: ${firstName} ${lastName}
-- Email: ${email}
-- Phone: ${phone}
-- Company: ${company || 'N/A'}
+- Name: ${formData.firstName} ${formData.lastName}
+- Email: ${formData.email}
+- Phone: ${formData.phone}
+- Company: ${formData.company || 'N/A'}
 
 Project Requirements:
-- Service Needed: ${service || 'Not specified'}
-- Budget Range: ${budget || 'Not specified'}
-- Timeline: ${timeline || 'Not specified'}
+- Service Needed: ${formData.service || 'Not specified'}
+- Budget Range: ${formData.budget || 'Not specified'}
+- Timeline: ${formData.timeline || 'Not specified'}
 
 Project Details:
-${message || 'No additional details provided'}
+${formData.message || 'No additional details provided'}
 
 ---
 This inquiry was submitted through the BUGnBULL contact form.
