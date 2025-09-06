@@ -28,8 +28,9 @@ import {
   Search,
   Zap,
   QrCode
-} from "lucide-react";
+ } from "lucide-react";
 
+import posterImage from "@/assets/video-poster.jpg";
 export default function Learn() {
   const [selectedCourse, setSelectedCourse] = useState<typeof courses[0] | null>(null);
   const [showCallModal, setShowCallModal] = useState(false);
@@ -575,21 +576,17 @@ export default function Learn() {
             </DialogDescription>
           </DialogHeader>
           
-          <div className="aspect-video w-full bg-muted rounded-xl overflow-hidden relative">
-            <img 
-              src="/src/assets/video-poster.jpg" 
-              alt="Web Development Course Preview"
+          <div className="aspect-video w-full bg-muted rounded-xl overflow-hidden">
+            <video
+              controls
+              preload="metadata"
               className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-              <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors cursor-pointer">
-                <Play className="w-6 h-6 text-black ml-1" />
-              </div>
-            </div>
-            <div className="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-2 rounded-lg">
-              <p className="text-sm font-medium">Course Preview Coming Soon</p>
-              <p className="text-xs opacity-80">Placeholder for course video content</p>
-            </div>
+              poster={posterImage}
+            >
+              <source src="/videos/course-preview.webm" type="video/webm" />
+              <source src="/videos/course-preview.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
